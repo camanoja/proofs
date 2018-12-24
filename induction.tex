@@ -11,6 +11,7 @@
 \newcommand{\justification}[1]{\text{[\textbf{#1}]}}
 
 \newcommand{\challenge}{(\emph{Challenge}) }
+\newcommand{\dprime}{\prime\prime}
 
 \author{James Camano}
 \title{Mathematical Induction and Proofs by Induction}
@@ -55,7 +56,7 @@
 		% Euclid's Argument
 		\noindent \example{Prove that there are infinitely many prime numbers.}
 		\begin{proof} 
-			Let $p$ be a prime number. Then $p$ satisfies the following two conditions:
+			Let $p$ be a prime number. Then $p$ satisfies the following conditions:
 				\begin{enumerate}
 					\item $p \in \mathbb{N}$
 					\item $p \geq 2$, and
@@ -68,9 +69,9 @@
 				p' = p_1 \cdot p_2 \cdot ... \cdot p_n
 			\end{align*}
 			We see that $p'$ is definitely divisible by all of the primes in existence (in $F$, by supposition). \\
-			Consider the number $p \prime \prime = p \prime + 1$. Notice that this number is not divisible by any of the primes in existence - to see this, notice that by dividing $p \prime \prime$ by any $p \in F$, we always will get a remainder of 1 \footnote{Rigorously, we would consult the division algorithm - however, I believe the preceding argument naturally suffices}. \\
+			Consider the number $p \dprime = p \prime + 1$. Notice that this number is not divisible by any of the primes in existence - to see this, notice that by dividing $p \dprime $ by any $p \in F$, we always will get a remainder of 1 \footnote{Rigorously, we would consult the division algorithm - however, I believe the preceding argument naturally suffices}. \\
 			
-			It becomes clear that the only factors of $p \prime \prime $ are 1, and $p \prime \prime$ itself. We have effectively generated a new prime number that was not in $F$. Suppose we added $p \prime \prime$ to $F$ to achieve a new collection $F \prime$. Then, by the same arguments detailed in this proof, we can continuously generate new primes without bound! Thus, we see that we could not have possibly have defined a finite set $F$ of prime numbers in the first place, because $F$ was already infinite to begin with. The desired conclusion follows.
+			It becomes clear that the only factors of $p \dprime$ are 1, and $p \dprime$ itself. We have effectively generated a new prime number that was not in $F$. Suppose we added $p \dprime$ to $F$ to achieve a new collection $F \prime$. Then, by the same arguments detailed in this proof, we can continuously generate new primes without bound! Thus, we see that we could not have possibly have defined a finite set $F$ of prime numbers in the first place, because $F$ was already infinite to begin with. The desired conclusion follows.
 					
 		\end{proof}
 	

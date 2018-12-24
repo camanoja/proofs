@@ -3,15 +3,50 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
+\usepackage{amsthm}
+
+\newcommand{\example}[1]{\textbf{Example}: \emph{#1}}
+\newcommand{\justification}[1]{\text{[\textbf{#1}]}}
+
 \author{James Camano}
 \title{Mathematical Induction and Proofs by Induction}
 \begin{document}
 	\maketitle
 	\newpage
 	
+	% Introduction	
 	\part{Mathematical Induction}
-		We start our discussion with a review of various proof techniques. 
-	\part{A Proof by Induction}
-	\part*{Questions}
+		% Begin with a review of proofs
+		We start our discussion with a quick review of proofs in mathematics.
+		% Direct Proofs vs. Indirect Proofs
+		\section{Direct vs. Indirect Proof Structure}
+			Proof methods (i.e. the ways to prove a statement's validity or invalidity) can be separated into two classes: \emph{Direct} and \emph{Indirect} 	  methods. In other words, the way that a mathematician uses logic to prove some statement can be thought to be in one of these ``styles".
+			
+		\subsection{Direct Proofs}
+			A proof which has a direct proof structure can be thought of as using known facts to prove a statement, without resorting to an alternative method, we provide an example. \\
+			
+		\noindent \example{Prove that the sum of two odd numbers is an even number.}
+		\begin{proof}
+			Let $a$ and $b$ be odd numbers. Then, we must have
+			\begin{align*}
+				&a = 2n + 1, \quad \text{ and}   \\
+				&b = 2m + 1; \quad \text{for } n,m \in \mathbb{Z}
+			\end{align*}			
+			This is from the definition of odd numbers (note that number $n$ is even if $n = 2k, k \in \mathbb{Z}$.) Adding $a$ and $b$, we immediately retrieve the desired result:
+			\begin{align*}
+				a + b &= (2n + 1) + (2m + 1) \quad \justification{by definition of $a$ and $b$} \\
+						 &= (2n + 2m) + (1 + 1) \quad \justification{by the commutative property of $\mathbb{Z}$} \\
+						 &= 2(n+m) + 2				\quad \justification{factoring} \\
+						 &= 2(n+m+1)				\quad \justification{factoring}
+			\end{align*}
+			
+			Since the sum of an integer and another integer will always be an integer, we conclude that $a+b$, by definition, is an even number, as wanted.
+		\end{proof}
+	
+	\part{Questions}
+		\begin{enumerate}
+			\item Prove that any odd number can be written as a difference of squares \footnote{A difference of squares is of the form $(a^2 - b^2)$, where $a, b \in \mathbb{N}$}. 
+		\end{enumerate}
+		
 	
 \end{document}

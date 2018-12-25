@@ -11,7 +11,9 @@
 \newcommand{\justification}[1]{\text{[\textbf{#1}]}}
 
 \newcommand{\challenge}{(\emph{Challenge}) }
-\newcommand{\dprime}{\prime\prime}
+\let \oldprime \prime
+\renewcommand{\prime}{^{\oldprime}}
+\newcommand{\dprime}{^{\oldprime\oldprime}}
 
 \author{James Camano}
 \title{Mathematical Induction and Proofs by Induction}
@@ -64,18 +66,16 @@
 				\end{enumerate}
 			Suppose to the contrary that there exists a finite number $n$ of prime numbers. \\
 			Then,we may, theoretically, gather the entire collection of these primes. Let this collection be described as $F = \{p_1, p_2, ..., p_n\}$ \footnote{This is known as a set, and the way we have described it is called an \emph{exhaustive} description of a set.}. \\
-			Let the number $p \prime $ be the \emph{product of all of the primes in $F$}. We must have:
+			Let the number $p\prime$ be the \emph{product of all of the primes in $F$}. We must have:
 			\begin{align*}
-				p' = p_1 \cdot p_2 \cdot ... \cdot p_n
+				p\prime = p_1 \cdot p_2 \cdot ... \cdot p_n
 			\end{align*}
 			We see that $p'$ is definitely divisible by all of the primes in existence (in $F$, by supposition). \\
-			Consider the number $p \dprime = p \prime + 1$. Notice that this number is not divisible by any of the primes in existence - to see this, notice that by dividing $p \dprime $ by any $p \in F$, we always will get a remainder of 1 \footnote{Rigorously, we would consult the division algorithm - however, I believe the preceding argument naturally suffices}. \\
+			Consider the number $p \dprime = p \prime + 1$. Notice that this number is not divisible by any of the primes in existence - to see this, notice that by dividing $p \dprime $ by any $p \in F$, we always will get a remainder of 1 \footnote{Rigorously, we would consult the division algorithm - however, I believe the preceding argument naturally suffices.}. \\
 			
-			It becomes clear that the only factors of $p \dprime$ are 1, and $p \dprime$ itself. We have effectively generated a \emph{new} prime number that was not in $F$, our supposed `complete' set of all prime numbers. We have reached a contradiction, and the desired result follows.
-					
-		\end{proof}
+			It becomes clear that the only factors of $p \dprime$ are 1, and $p \dprime$ itself. We have effectively generated a \emph{new} prime number that was not in $F$, our supposed `complete' set of all prime numbers. We have reached a contradiction, and we could not have possibly constructed a finite collection of prime numbers in the first place. The desired result follows.	\end{proof}
 	
-	The `indirect' portion of this proof is in the supposition statement. We suppose that the statement we are trying to prove is false, and by flawless logical reduction from this negation, we reach a contradiction. We then argue that the only flaw in our logic was the supposition itself, therefore, the actual desired conclusion must be true. Thus, by resorting to proving another related statement, the desired statement is proven. (This specific indirect proof method is known as a \emph{Proof by Contradiction.})
+	The `indirect' portion of this proof is in the supposition statement. We suppose that the statement we are trying to prove is false, and by flawless logical reduction from this negation, we reach a contradiction. We then argue that the only flaw in our logic was the supposition itself, therefore, the actual desired conclusion must be true. Thus, by resorting to proving another related statement, the desired statement is proven\footnote{Notice that the `equivalent' statement that we have proven can be stated as: ``It is not the case that the set of prime numbers is finite".}. (This specific indirect proof method is known as a \emph{Proof by Contradiction.})
 	
 	% a simple diagram of proof structure
 	\begin{figure}[h]
@@ -86,7 +86,7 @@
 	
 	\newpage
 	
-	\section{``Induction"?}
+	\section{``\emph{Induction}"}
 	
 	\part{Questions}
 		\begin{enumerate}

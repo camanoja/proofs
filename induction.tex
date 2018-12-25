@@ -80,19 +80,23 @@
 	% a simple diagram of proof structure
 	\begin{figure}[h]
 		\centering
-		\includegraphics[scale=0.5]{res/direct_indirect.png}
-		\caption{Depicting the algorithmic difference between the two types of proof structure.}
-	\end{figure}
+		\includegraphics[scale=0.45]{res/direct_indirect.png}
+		\caption{The algorithmic difference between the two types of proof structure.}
+	\end{figure}	
 	
 	\newpage
 	
 	\section{``\emph{Induction}"}
+	We explore the definition of induction, and use it as motivation for the similarly named proof technique.
+	
 	
 	\part{Questions}
 		\begin{enumerate}
 			\item Prove directly that the sum of an even integer and another even integer (not necessarily the same integer) is even.
-			\subitem --- What can you conclude about the sum of an odd integer and an even integer? Can you directly prove it?
-			\item \challenge Prove that any odd number is equal to a difference of squares \footnote{A difference of squares is of the form $(a^2 - b^2)$, where $a, b \in \mathbb{N}$}. 
+				\subitem --- What can you conclude about the sum of an odd integer and an even integer? Can you directly prove it?
+			\item \challenge Prove that any odd number is equal to a difference of squares\footnote{A difference of squares is of the form $(a^2 - b^2)$, where $a, b \in \mathbb{N}$}. 
+				\subitem --- Hint: This difference of squares is not unique. 
+				\subitem --- Hint: This proof is facilitated by \emph{constructing} the difference of squares.
 			
 			\item Prove $\sum_{i = 1}^{n} i^2 = \frac{n(n+1)(2n+1)}{6}$, by induction.
 			\item Prove $\sum_{i = 1}^{n} i^3 = (\sum_{i = 1}^{n} i)^2 $.

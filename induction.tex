@@ -65,17 +65,17 @@
 					\item The only factors of $p$ are $1$ and $p$, that is, no number other than $1$ and $p$ divides $p$ evenly.
 				\end{enumerate}
 			Suppose to the contrary that there exists a finite number $n$ of prime numbers. \\
-			Then,we may, theoretically, gather the entire collection of these primes. Let this collection be described as $F = \{p_1, p_2, ..., p_n\}$ \footnote{This is known as a set, and the way we have described it is called an \emph{exhaustive} description of a set.}. \\
+			Then,we may, theoretically, gather the entire collection of these primes. Let us exhaustively describe this collection as $F = \{p_1, p_2, ..., p_n\}$ \footnote{This is known as a set, and the way we have described it is called an \emph{exhaustive} description of a set.}. \\
 			Let the number $p\prime$ be the \emph{product of all of the primes in $F$}. We must have:
 			\begin{align*}
 				p\prime = p_1 \cdot p_2 \cdot ... \cdot p_n
 			\end{align*}
 			We see that $p'$ is definitely divisible by all of the primes in existence (in $F$, by supposition). \\
-			Consider the number $p \dprime = p \prime + 1$. Notice that this number is not divisible by any of the primes in existence - to see this, notice that by dividing $p \dprime $ by any $p \in F$, we always will get a remainder of 1 \footnote{Rigorously, we would consult the division algorithm - however, I believe the preceding argument naturally suffices.}. \\
-			
+			Consider the number $p \dprime = p \prime + 1$. Notice that this number is not divisible by any of the primes in existence - to see this, notice that by dividing $p \dprime $ by any $p \in F$, we always will get a remainder of 1\footnote{Rigorously, we would consult a mathematical construct known as the \emph{division algorithm} - however, I believe the preceding argument intuitively suffices.}.\\
+
 			It becomes clear that the only factors of $p \dprime$ are 1, and $p \dprime$ itself. We have effectively generated a \emph{new} prime number that was not in $F$, our supposed `complete' set of all prime numbers. We have reached a contradiction, and we could not have possibly constructed a finite collection of prime numbers in the first place. The desired result follows.	\end{proof}
 	
-	The `indirect' portion of this proof is in the supposition statement. We suppose that the statement we are trying to prove is false, and by flawless logical reduction from this negation, we reach a contradiction. We then argue that the only flaw in our logic was the supposition itself, therefore, the actual desired conclusion must be true. Thus, by resorting to proving another related statement, the desired statement is proven\footnote{Notice that the `equivalent' statement that we have proven can be stated as: ``It is not the case that the set of prime numbers is finite".}. (This specific indirect proof method is known as a \emph{Proof by Contradiction.})
+	The `indirect' portion of this proof is in the supposition statement. We suppose that the statement we are trying to prove is false, and by flawless logical reduction from this negation, we reach a contradiction. We then argue that the only flaw in our logic was the supposition itself, therefore, the actual desired conclusion must be true. Thus, by resorting to proving another related statement, the desired statement is proven\footnote{Notice that the `equivalent' statement that we have proven can be stated as: ``It is not the case that the set of prime numbers is finite".}. (This specific indirect proof technique is known as a \emph{Proof by Contradiction.})
 	
 	% a simple diagram of proof structure
 	\begin{figure}[h]
@@ -86,9 +86,19 @@
 	
 	\newpage
 	
-	\section{``\emph{Induction}"}
-	We explore the definition of induction, and use it as motivation for the similarly named proof technique.
+	\section{``Induction"}
+	We explore the definition of induction, and use it as motivation for the similarly named proof technique. \\
 	
+	% CITE
+	According to Merriam-Webster, Induction is defined as: ``\emph{inference of a generalized conclusion from particular instances}." That is, the validity of a hypothesis is based on the breadth of cases for which said hypothesis does hold.\\
+	
+	An essential flaw of this type of induction is that one can never be \emph{totally} confident that a certain statement holds. For instance, it may be the case that no Beagle that has ever existed has never naturally grown green fur, but perhaps in the future there might exist a Beagle whose genetics are such that it does naturally grow green fur. In this way, one may be fairly confident in the statement \emph{``Beagles do not have green fur"}, but never totally confident. \\
+	
+	 In a similar vein, consider the predicate: $\forall n \in \mathbb{N}, n \geq 3, n^2 < 2^n$. Intuitively, this predicate seems true, and one could go about calculating the values for both $n^2$ and $2^n$, for $n = 1$ and then comparing those values to verify the predicate, repeating the process for $n=2$, then $n=3$, ... etc. However, the analogous problem presents itself here: what if there was some number $M \in \mathbb{N}$ that is beyond the scope of conceivable human (and computer) discovery\footnote{For example, Graham's Number}? How do we verify the predicate for such an unknown number?
+	 
+	\section{Induction}
+		Induction is also known as a way to create the set $\mathbb{N}$. It is the following predicate: $$\text{If } n \in S, \text{ then } (n+1) \in S$$	
+	\newpage
 	
 	\part{Questions}
 		\begin{enumerate}

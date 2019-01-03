@@ -27,8 +27,8 @@
 		We start our discussion with a quick review of proofs in mathematics.
 		% Direct Proofs vs. Indirect Proofs
 		\section{Direct vs. Indirect Proof Structure}
-			In the words of one of my Computer Science professors, a proof is a convincing argument. \\ 
-			Proof methods (i.e. the ways to argue a statement's validity or invalidity) can be separated into two groups: \emph{Direct} and \emph{Indirect} 	  methods. In other words, the way that a mathematician uses logic to prove some statement can be thought to be in one of these ``styles".
+			In the words of one of my computer science professors, a proof is a convincing argument. \\ 
+			Proof methods (i.e. the ways to argue a statement's validity or invalidity) can be separated into two groups: \emph{Direct} and \emph{Indirect} methods. In other words, the way that a mathematician uses logic to prove some statement can be thought to be in one of these ``styles".
 			
 		\subsection{Direct Proofs}
 			A proof which has a direct proof structure can be thought of as using known facts to prove a statement, without resorting to an alternative method. We provide an example. \\
@@ -96,9 +96,12 @@
 	
 	 In a similar vein, consider the predicate: $\forall n \in \mathbb{N}, n \geq 3, n^2 < 2^n$. Intuitively, this predicate seems true, and one could go about calculating the values for both $n^2$ and $2^n$, for $n = 1$ and then comparing those values to verify the predicate, repeating the process for $n=2$, then $n=3$, ... etc. However, the analogous problem presents itself here: what if there was some number $M \in \mathbb{N}$ that is beyond the scope of conceivable human (and computer) discovery\footnote{For example, Graham's Number}? How do we verify the predicate for such an unknown number?
 	 
-	\section{Induction}
-		Induction is also known as a way to create the set $\mathbb{N}$. It is the following predicate: $$\text{If } n \in S, \text{ then } (n+1) \in S$$	
+	\section{Proofs by Induction}
+		% Define 
 	\newpage
+	
+	\part{Appendix}
+		\section{Part A}
 	
 	\part{Questions}
 		\begin{enumerate}
@@ -107,7 +110,7 @@
 			\item \challenge Prove that any odd number is equal to a difference of squares\footnote{A difference of squares is of the form $(a^2 - b^2)$, where $a, b \in \mathbb{N}$}. 
 				\subitem --- Hint: This difference of squares is not unique. 
 				\subitem --- Hint: This proof is facilitated by \emph{constructing} the difference of squares.
-			
+			\item Let $a, b, c, d \in \mathbb{R}$; where $b, c, d \neq 0$. Prove that $\frac{a}{b} \div \frac{c}{d} = \frac{a}{b} \cdot \frac{d}{c}$. (You may assume that $\frac{a}{b} \cdot \frac{b}{a} = 1$, under the appropriate conditions.)
 			\item Prove $\sum_{i = 1}^{n} i^2 = \frac{n(n+1)(2n+1)}{6}$, by induction.
 			\item Prove $\sum_{i = 1}^{n} i^3 = (\sum_{i = 1}^{n} i)^2 $.
 			\item \challenge Prove, by induction that the degree-sum of the internal angles of $n$-sided polygon is equal to $(n-2)*180$:

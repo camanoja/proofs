@@ -1,0 +1,20 @@
+\chapter{Introduction}
+\section{What are Proofs?}
+% the cornerstone of theoretical (and argubaly applied) mathematics
+Summarized in a sentence, a proof is a convincing argument.
+Proof methods (i.e. the ways to argue a statement's validity or invalidity) can be separated into two groups: \emph{Direct} and \emph{Indirect} methods. In other words, the way that a mathematician uses logic to prove some statement can be thought to be in one of these ``styles".
+
+% allows us to show some perhaps counter-intuitive relationships
+The number $0.999... = 1$.
+\begin{proof}
+  We examine properties of the number $0.999...$ to achieve the desired
+  equality. Let $n = 0.999...$.
+  \begin{align}
+     n  &= 0.999... & \justify{Definition}  \\
+     10n &= 9.999... 												\\
+     10n - (n) &= 9.999... - (999...) & \justify{Definition of $n$} \\
+     9n &= 9 \\
+      n &= 1
+  \end{align}
+  And thus, we see from the equivalence of the first and last equations that $0.999 = 1$, as claimed.
+\end{proof}

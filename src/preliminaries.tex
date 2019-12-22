@@ -1,2 +1,97 @@
 \chapter{Preliminaries}
-We review some necessary concepts before we begin our discussion of proofs.
+We review and define some necessary concepts before we begin our discussion of proofs.
+\section{Conventions}
+  % assigning a number to a letter
+  \subsubsection*{Assigning a Number to a Letter}
+  The mathematical statement $n = 2.2$ \emph{assigns} the number $2.2$ to the letter $n$,
+  and allows us to use the $n$ in replacement of where the number would exist. $n$ is known as a variable.
+  This assignment usually exists for the sake of brevity and generalization.
+
+  The context of the usage of the variable defines the operation to take place.
+  For example, $n = m$ may either state that we assign the value of $m$ to $n$, or
+  we are asserting that $n$ is \emph{equal} to $m$.
+
+  \subsubsection{Assigning a Mathematical Object to a Letter}
+  In the same way as numbers, we can also use variables to describe mathematical
+  objects other than numbers.
+  We may say that $x = (2, 9)$, $y = 5 + 3i$, $z = f$ (where $f$ is a function), etc.
+
+  % theorems, lemmas and corollaries
+  \subsubsection*{Theorems vs. Lemmas vs. Corollaries}
+  What defines a theorem is generally a obscure topic, but the general rule is as follows.
+  A theorem describes some sort of large or powerful result, while a lemma describes
+  a subordinate result used to achieve a theorem. A corollary is a result that
+  is an immediate consequence of a theorem.
+
+  For example, we might call to memory \emph{Pythagoras' Theorem}, which states
+  that the square of length of the hypotenuse of a right triangle is equal to
+  the sum of the squares of its adjacent sides. A lemma that could perhaps be used
+  to prove this theorem is the fact that the area of a triangle is one-half the area
+  of its enclosing quadrilateral. And finally, a corollary of the theorem is
+  that there are \emph{infinitely} many Pythagorean triplets (e.g. $(3, 4, 5), (6, 8, 10), (12, 16, 20)$, etc.).
+
+\section{Properties of Equality}
+  Suppose that two mathematical objects (numbers, ordered pairs, matrices, etc.)
+  $a$ and $b$ are equal. We express this as $a = b$.
+
+  Then, we must have that:
+  \begin{enumerate}[label=(\alph*)]
+    \item The equality is \emph{transitive}. That is, if $a = b$ and $b = c$, for some
+    object $c$ then $a = c$. For example, we know that $2 = 4/2$. We also know that
+    $2 = \sqrt[3]{8}$. Hence, $\frac{4}{2} = \sqrt[3]{8}$.
+
+    \item The equality is \emph{symmetric}. That is, $a = b$ and $b = a$. For example,
+    $(27, 49.02) = (3^3, 7^2 + 0.2)$ and $(3^3, 7^2 + 0.2) = (27, 49.02)$.
+
+    \item The equality is \emph{reflexive}. That is, $a = a$. For example $5 \cdot 10 = 5 \cdot 10.$
+  \end{enumerate}
+
+\section{Number Sets}
+  \subsubsection*{Definitions}
+  A \emph{set} is an unordered collection of numbers. We define the following sets of numbers:
+  \begin{enumerate}
+    \item $\naturals$: The set containing the non-negative whole numbers. In set notation, we say $\naturals = \toset{0, 1, 2, \ldots}$.
+    \item $\ints$: The set containing the integers. $\ints = \toset{\ldots, -2, -1, 0, 1, -2, \ldots}$.
+    \item $\rationals$: The set containing all numbers which can be expressed as a fraction of two integers: $\rationals = \toset{\frac{p}{q}: p, q \in \ints; q \neq 0}$.
+    \item $\bar{\rationals}$: The set containing the numbers for which cannot be expressed as a fraction of two integers:
+    $\bar{\rationals} = \toset{\ldots, \pi, e, \sqrt{2}, \phi, \ldots}$.
+    \item $\reals$: The combined set of the $\rationals$ and $\bar{\rationals}$: $\reals = \rationals \cup \bar{\rationals}$
+  \end{enumerate}
+
+  $\naturals$ is known as the natural numbers, $\ints$ is known as the integers, $\rationals$ is known as the rational numbers, $\bar{\rationals}$ is known as the irrational numbers, and $\reals$ is known as the real numbers.
+
+  If a number $n$ exists within a set $S$, then we say that $n$ is a \emph{member} of $S$.
+  In mathematical notation, $n \in S$. As an example, we have that $-5 \in \ints$ but $-5 \not\in \naturals$.
+
+  \subsubsection*{Closure}
+  We say that a set $S$ is \emph{closed} under a certain operation (e.g. addition, multiplication, etc.)
+  if for \emph{any} two elements $a, b \in S$, the resulting object $c$ that is the result of the
+  operation between $a$ and $b$ \emph{is also} in $S$. We have the following obvious properties:
+  \begin{itemize}
+    \item $\naturals$ is closed under addition and multiplication, but not subtraction and division.
+    \item $\ints$ is closed under addition, multiplication and subtraction, but not division.
+  \end{itemize}
+
+  For example, we see that $\naturals$ is not closed under subtraction, as $(8) - (9) = -1 \not \in \naturals$ and
+  $\ints$ is not closed under division as $(3) \div (2) = 1.5 \not\in \ints $
+
+
+\section{The Sum Operator}
+  \newcommand{\negfrac}[1]{\frac{ (-1)^{#1} }{ #1! } }
+
+  Consider the sum: $$ 4 + 9 + 16 + 25 + ... + 100. $$
+  We may express this sum succinctly as: $$ \sum_{i=2}^{10}{i^2}. $$
+
+  This symbol $\sum$ is known as the \emph{sum operator}. In general, the sum operator describes the sum: $$ \sum_{i=a}^{b}{s_i} = s_a + s_{a+1} + \ldots + s_{b-1} + s_b. $$
+  The variable $i$ is known as the \emph{index}, taking the values $a, a+1, \ldots, b-1, b$ where $a \leq b$. $s_i$
+  is known as the \emph{sum term}, a term for whose value depends on the value $i$.
+
+  For example, for $a = 0; b = 4; s_i = (-1)^i/i!$ we have:
+  \begin{align}
+    \sum_{i=0}^{4}{\frac{(-1)^i}{i!}} &= \negfrac{0} + \negfrac{1} + \negfrac{2} + \negfrac{3} + \negfrac{4}  \label{prelim: eq: sumcos} \\
+                                      &= 1 - 1 + \frac{1}{2} - \frac{1}{6} + \frac{1}{24} \\
+                                      &= \frac{1}{2} - \frac{1}{6} + \frac{1}{24} \\
+                                      &= \frac{3}{8}
+  \end{align}
+
+  It should be noted that there is generally no unique way to describe a sum in sum notation. The first sum could have been expressed as $\sum_{i=0}^{8}{(i+2)^2}$, and the sum in \ref{prelim: eq: sumcos} could have been expressed as $\sum_{i=0}^{4}{ \frac{\cos{i\pi}} {i!} }.$

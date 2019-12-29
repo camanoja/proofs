@@ -21,7 +21,7 @@ This paper should be challenging to the point where passing the challenge is gra
 
 ## Introduction
 - What are Proofs?
-  * A tool for truth; allows us to definitively state whether something is true or not.
+  * A method for deducing truth; allows us to definitively state whether something is true or not.
   * A product of philosophy; deeper than the mathematics that perhaps we are led to believe
   * Allows us to explore the field of mathematics given fundamental tools
 
@@ -81,7 +81,7 @@ This paper should be challenging to the point where passing the challenge is gra
 
  - Aside: Why Induction works on N and not Z
 
- - Aside: 
+ - Aside:
 
 ## Conclusion/Questions
 - A note on elegance with proofs

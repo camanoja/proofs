@@ -21,6 +21,7 @@ This paper should be challenging to the point where passing the challenge is gra
 
 ## Introduction
 - What are Proofs?
+  * (Ex) Deductive Arguments
   * A method for deducing truth; allows us to definitively state whether something is true or not.
   * A product of philosophy; deeper than the mathematics that perhaps we are led to believe
   * Allows us to explore the field of mathematics given fundamental tools

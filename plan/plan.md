@@ -1,8 +1,12 @@
 # A Quick Introduction to Proofs
 ## Paper Goal
-To provide an _accessible_ and easy-to-digest introduction to proof structure. This paper should be readable for anyone who has completed high-school math. Thus, the goal is to introduce these concepts at a higher level; elegance is favoured over rigour.
+Theme: Intuition
 
-This paper should be challenging to the point where passing the challenge is gratifying, but not frustrating. This paper must respect the intelligence of the reader and not be condescending.
+To provide an _accessible_ and easy-to-digest introduction to proof structure. This paper should be readable for anyone who has completed high-school Math. Thus, the goal is to introduce these concepts at a higher level; elegance is favoured over rigour.
+
+This paper should be challenging to the point where passing the challenge is gratifying, but not frustrating. This paper must respect the intelligence of the reader.
+
+Examples should be given to build intuition in addition to the instruction given.
 
 ## Preliminaries
  - Conventions
@@ -22,7 +26,7 @@ This paper should be challenging to the point where passing the challenge is gra
 ## Introduction
 - What are Proofs?
   * (Ex) Deductive Arguments
-  * A method for deducing truth; allows us to definitively state whether something is true or not.
+  * A method for reason ~A method for deducing truth~; allows us to definitively state whether something is true or not.
   * A product of philosophy; deeper than the mathematics that perhaps we are led to believe
   * Allows us to explore the field of mathematics given fundamental tools
 
@@ -36,6 +40,9 @@ This paper should be challenging to the point where passing the challenge is gra
 ## Direct Proofs
 - Proving Regular Statements directly
   * Example: uniqueness of 7 being a prime number that is one less than a cube
+  * Pythagoras' Theorem
+  * Example: n-contiguous pythagorean triplets
+  * decomposition of a function into the sum of an even and an odd function
 
 
 - Conditional statements
@@ -45,7 +52,10 @@ This paper should be challenging to the point where passing the challenge is gra
 
 ## Indirect Proofs
 - _Reductio ad absurdum_
+  * Latin for "reduction to an absurdity"
+  * Infinite primes
   * Linear Regularity in prime numbers
+
 
 
 - Proof by Contradiction

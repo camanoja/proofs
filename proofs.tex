@@ -1,6 +1,8 @@
-\documentclass[10pt,a4paper,fleqn]{book}
+\documentclass[a4paper,fleqn]{book}
 \usepackage[utf8]{inputenc}
-\usepackage{./macros/c73macros}
+\usepackage{macros/camanojamacros}
+
+\usepackage{subfiles}
 
 \newcommand{\example}[1]{\textbf{Example}: \emph{#1}}
 \newcommand{\justification}[1]{\text{[\textbf{#1}]}}
@@ -9,18 +11,28 @@
 \let \oldprime \prime
 \renewcommand{\prime}{^{\oldprime}}
 \newcommand{\dprime}{^{\oldprime\oldprime}}
-\newcommand{\incltex}[1]{\include{./src/#1}}
+
+\newcommand{\rationals}{\mathbb{R}}
+
+\newenvironment{expl}{
+\noindent\hrulefill \\
+    \textbf{Example:}
+}
+{
+
+\noindent\hrulefill \\
+}
 
 \author{James Camano}
 \title{Proofs}
 \begin{document}
 	\maketitle
 	\tableofcontents
-	\incltex{introduction}
-	\incltex{preliminaries}
-	\incltex{direct}
-	\incltex{indirect}
-	\incltex{induction}
-	\incltex{appendix}
-	\incltex{questions}
+	\subfile{src/introduction}
+	\subfile{src/preliminaries}
+	\subfile{src/direct}
+	\subfile{src/indirect}
+	\subfile{src/induction}
+	\subfile{src/appendix}
+	\subfile{src/questions}
 \end{document}

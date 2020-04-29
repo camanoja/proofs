@@ -1,20 +1,37 @@
+\documentclass[../proofs.tex]{subfiles}
+\begin{document}
 \chapter{Direct Proofs}
-  A proof which has a direct proof structure can be thought of as using known facts to prove a statement, without resorting to an alternative method. We provide an example. \\
+  In similar structure to the example in the Introduction, a \emph{direct proof} can be
+  thought of as using known facts to prove a statement, without resorting to an
+  alternative method. We illustrate with a few examples. \\
 
-\noindent \example{Prove that the sum of two odd numbers is an even number.}
+\begin{expl}
+  Prove that the sum of two odd numbers is an even number.
+
 \begin{proof}
-  Let $a$ and $b$ be odd numbers. Then, we must have
-  \begin{align*}
-    &a = 2n + 1, \quad \text{ and}   \\
-    &b = 2m + 1; \quad \text{for } n,m \in \mathbb{Z}
-  \end{align*}
-  This is from the definition of odd numbers (note that number $n$ is even if $n = 2k, k \in \mathbb{Z}$.) Adding $a$ and $b$, we immediately retrieve the desired result:
-  \begin{align*}
-    a + b &= (2n + 1) + (2m + 1) 	& \justification{by definition of $a$ and $b$} \\
-         &= (2n + 2m) + (1 + 1) 	& \justification{by the commutative property of $\mathbb{Z}$} \\
-         &= 2(n+m) + 2			& \justification{factoring} \\
-         &= 2(n+m+1)				& \justification{factoring}
-  \end{align*}
-  Since the sum of an integer and another integer will always be an integer, we conclude that $a+b$, by definition, is an even number, as wanted.
+% define odd numbers
+Let $a$ and $b$ be odd numbers. We may express $a$ and $b$ as:
+\begin{align*}
+  a &= 2n + 1, \quad \text{ and}   \\
+  b &= 2m + 1; \quad \text{for } n,m \in \mathbb{Z}
+\end{align*}
+
+This comes from the definitions of odd numbers. As a verifying example,
+$a = -7, b = 3$ if $n = -4$ and $m = 1$. Adding $a$ and $b$, we immediately get
+the desired result:
+\begin{align*}
+  a + b &= (2n + 1) + (2m + 1) 	& \justify{by definition of $a$ and $b$} \\
+       &= (2n + 2m) + (1 + 1) 	& \justify{by the commutative property of $\mathbb{Z}$} \\
+       &= 2(n+m) + 2			& \justify{factoring} \\
+       &= 2(n+m+1)				& \justify{factoring}
+\end{align*}
+
+Since the sum of an integer and another integer will always be an integer, we conclude that $a+b$, by definition, is an even number, as wanted.
+
 \end{proof}
-One might regard the notion of a direct proof as so basic that it is hard to understand. Perhaps contrasting a direct proof against an indirect proof may bring some clarity.
+
+\end{expl}
+
+In this case, we used the known definitions of odd numbers and properties of
+simple algebra to achieve our desired result.     
+\end{document}

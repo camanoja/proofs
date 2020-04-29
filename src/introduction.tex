@@ -1,14 +1,7 @@
-\newcommand{\hrulesmall}{\rule{0.8\textwidth}{1pt}}
-\newenvironment{expl}{
-\noindent\hrulefill \\
-    \textbf{Example:}
-}
-{
+\documentclass[../proofs.tex]{subfiles}
+\newcommand{\hrulesmall}{\rule{0.4\textwidth}{1pt}}
 
-\noindent\hrulefill \\
-}
-
-
+\begin{document}
 \chapter{Introduction}
 \section{What are Proofs?}
 % Deductive arguments
@@ -31,7 +24,6 @@ $A$ says ``Both of us are knaves." Our job is to determine who is a knight and w
   \item Suppose that $A$ is a knight. If $A$ is a knight, then the statement ``Both of us are knaves" is a lie.
   \item Since knights cannot tell a lie, $A$ must not have been a knight in the first place.
   \item Therefore, we conclude that $A$ is a knave.
-
   \item Since knaves always tell a lie, then the statement ``Both of us are knaves" has to be false.
   \item The only way for the statement to be false is for $B$ to be a knight. Therefore, $B$ must be a knight.
   \item \hrulesmall
@@ -94,3 +86,4 @@ are not convincing enough - we provide an alternative proof to the claim:
 
 Conceptually speaking, proofs are divided into two groups: \emph{Direct} and \emph{Indirect}.
 We review some important concepts of mathematics before diving into these techniques.
+\end{document}

@@ -1,11 +1,15 @@
+\documentclass[../proofs.tex]{subfiles}
+
+\begin{document}
 \chapter{Preliminaries}
 We review and define some necessary concepts before we begin our discussion of proofs.
 \section{Conventions}
   % assigning a number to a letter
   \subsubsection*{Assigning a Number to a Letter}
   The mathematical statement $n = 2.2$ \emph{assigns} the number $2.2$ to the letter $n$,
-  and allows us to use the $n$ in replacement of where the number would exist. $n$ is known as a variable.
-  This assignment usually exists for the sake of brevity and generalization.
+  and allows us to use the $n$ in replacement of where the number would exist.
+  The $n$ is known as a variable. This assignment usually exists for the sake of
+  brevity and generalization.
 
   The context of the usage of the variable defines the operation to take place.
   For example, $n = m$ may either state that we assign the value of $m$ to $n$, or
@@ -18,15 +22,15 @@ We review and define some necessary concepts before we begin our discussion of p
 
   % theorems, lemmas and corollaries
   \subsubsection*{Theorems vs. Lemmas vs. Corollaries}
-  What defines a theorem is generally a obscure topic, but the general rule is as follows.
+  What defines a theorem is obscure, but the general rule is as follows.
   A theorem describes some sort of large or powerful result, while a lemma describes
-  a subordinate result used to achieve a theorem. A corollary is a result that
-  is an immediate consequence of a theorem.
+  a subordinate result (sometimes called a ``stepping stone") used to achieve a
+  theorem. A corollary is a result that is an immediate consequence of a theorem.
 
   For example, we might call to memory \emph{Pythagoras' Theorem}, which states
   that the square of length of the hypotenuse of a right triangle is equal to
   the sum of the squares of its adjacent sides. A lemma that could perhaps be used
-  to prove this theorem is the fact that the area of a triangle is one-half the area
+  to prove the theorem is the fact that the area of a triangle is one-half the area
   of its enclosing quadrilateral. And finally, a corollary of the theorem is
   that there are \emph{infinitely} many Pythagorean triplets (e.g. $(3, 4, 5), (6, 8, 10), (12, 16, 20)$, etc.).
 
@@ -43,7 +47,7 @@ We review and define some necessary concepts before we begin our discussion of p
     \item The equality is \emph{symmetric}. That is, $a = b$ and $b = a$. For example,
     $(27, 49.02) = (3^3, 7^2 + 0.2)$ and $(3^3, 7^2 + 0.2) = (27, 49.02)$.
 
-    \item The equality is \emph{reflexive}. That is, $a = a$. For example $5 \cdot 10 = 5 \cdot 10.$
+    \item The equality is \emph{reflexive}. That is, $a = a$. For example, $5 \cdot 10 = 5 \cdot 10.$
   \end{enumerate}
 
 \section{Number Sets}
@@ -64,15 +68,15 @@ We review and define some necessary concepts before we begin our discussion of p
   In mathematical notation, $n \in S$. As an example, we have that $-5 \in \ints$ but $-5 \not\in \naturals$.
 
   \subsubsection*{Closure}
-  We say that a set $S$ is \emph{closed} under a certain operation (e.g. addition, multiplication, etc.)
+  We say that a set $S$ is \emph{closed} under a certain operation (e.g. addition, multiplication, et cetera)
   if for \emph{any} two elements $a, b \in S$, the resulting object $c$ that is the result of the
-  operation between $a$ and $b$ \emph{is also} in $S$. We have the following obvious properties:
+  operation between $a$ and $b$ \emph{is also} in $S$. We have the following properties:
   \begin{itemize}
     \item $\naturals$ is closed under addition and multiplication, but not subtraction and division.
     \item $\ints$ is closed under addition, multiplication and subtraction, but not division.
   \end{itemize}
 
-  For example, we see that $\naturals$ is not closed under subtraction, as $(8) - (9) = -1 \not \in \naturals$ and
+  We see that $\naturals$ is not closed under subtraction, as $(8) - (9) = -1 \not \in \naturals$ and
   $\ints$ is not closed under division as $(3) \div (2) = 1.5 \not\in \ints $
 
 
@@ -94,4 +98,23 @@ We review and define some necessary concepts before we begin our discussion of p
                                       &= \frac{3}{8}
   \end{align}
 
-  It should be noted that there is generally no unique way to describe a sum in sum notation. The first sum could have been expressed as $\sum_{i=0}^{8}{(i+2)^2}$, and the sum in \ref{prelim: eq: sumcos} could have been expressed as $\sum_{i=0}^{4}{ \frac{\cos{i\pi}} {i!} }.$
+  It should be noted that there is usually no unique way to describe a sum in sum
+  notation. The first sum could have been expressed as $\sum_{i=0}^{8}{(i+2)^2}$,
+  and the sum in \ref{prelim: eq: sumcos} could have been expressed as
+  $\sum_{i=0}^{4}{ \frac{\cos{i\pi}} {i!} }.$
+
+  \section{Operator Properties}
+  \newcommand{\op}{\circ}
+  Let $\op$ denote some operation on a set of one or more mathematical
+  objects $S$. Let $x, y, z \in S$.
+
+  % unary, binary, ternary operations
+  If $\op x$ is a valid operation, then we call $\op$ a unary operator. If $x \op y$
+  is a valid operation, then we call $\op$ a binary operator.  
+
+  % associativity
+
+  % reflexivity
+
+  % transitivity
+\end{document}

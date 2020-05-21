@@ -5,60 +5,66 @@
 \chapter{Introduction}
 \section{What are Proofs?}
 % Deductive arguments
-In logical philosophy (of which mathematics is a subfield), one is often concerned
-with whether a statement concerning some object is true or not. Given some fundamental
-properties about these objects as a starting point, the task becomes to analyse
-and combine these properties to argue various statements about these objects as
-a means to \emph{discover} new properties of these objects. A classic example is the
-\textit{Knights and Knaves} dilemma.
+In logical philosophy (of which mathematics is a subfield), one is often
+concerned with whether a statement concerning some object is true or not. Given
+some properties about these objects as a starting point, the task becomes to
+analyse and combine these properties to argue various statements about these
+objects as a means to \emph{discover} new properties of these objects. A classic
+example is the \textit{Knights and Knaves} dilemma.
 
 % Example: Deductive Arguments
 \begin{expl}
 In the land of Knights and Knaves, knights always tell the truth and
   knaves always tell a lie.
 
-You meet two people, Alice and Bob (henceforth referred to as $A$ and $B$, respectively.)
-$A$ says ``Both of us are knaves." Our job is to determine who is a knight and who is a knave.
+You meet two people, Alice and Bob (henceforth referred to as $A$ and $B$,
+respectively.) $A$ says ``Both of us are knaves." Our job is to determine who
+is a knight and who is a knave.
 
 \begin{list}{}{}
-  \item Suppose that $A$ is a knight. If $A$ is a knight, then the statement ``Both of us are knaves" is a lie.
-  \item Since knights cannot tell a lie, $A$ must not have been a knight in the first place.
+  \item Suppose that $A$ is a knight. If $A$ is a knight, then the statement
+        ``Both of us are knaves" is a lie.
+  \item Since knights cannot tell a lie, $A$ must not have been a knight in the
+        first place.
   \item Therefore, we conclude that $A$ is a knave.
-  \item Since knaves always tell a lie, then the statement ``Both of us are knaves" has to be false.
-  \item The only way for the statement to be false is for $B$ to be a knight. Therefore, $B$ must be a knight.
+  \item Since knaves always tell a lie, then the statement ``Both of us are
+        knaves" has to be false.
+  \item The only way for the statement to be false is for $B$ to be a knight.
+        Therefore, $B$ must be a knight.
   \item \hrulesmall
   \item Therefore, $A$ is a knave and $B$ is a knight.
 \end{list}
 \end{expl}
 
-We see that in the above example, given starting assumptions about knights, knaves and
-a statement about $A$, we are able to discern who is a knight and who is a knave.
-This style of argument is known as a \emph{deductive argument}.
+We see that in the above example, given starting assumptions about knights,
+knaves and a statement about $A$, we are able to discern who is a knight and
+who is a knave. This style of argument is known as a \emph{deductive argument}.
 
 
-Given a statement $S$, a \emph{proof} for $S$ is a convincing argument that shows $S$ is true.
-The structure of a proof combines knowledge that we have to \emph{discover} facts about that knowledge
-that we did not previously know.
+Given a statement $S$, a \emph{proof} for $S$ is a convincing argument that
+shows $S$ is true. The structure of a proof combines knowledge that we have to
+\emph{discover} facts about that knowledge that we did not previously know.
 
-Proofs are the heart of theoretical mathematics. The generative nature of a proof
-allows us to create powerful tools to generalize, dissect and classify different
-mathematical phenomena.
+Proofs are the heart of theoretical mathematics. The generative nature of a
+proof allows us to create powerful tools to generalize, dissect and classify
+different mathematical phenomena.
 
-This document will discuss a handful of different ways to prove some statement $S$.
-We will find that in the same way that there are different approaches to solving a
-problem, there are different proof \emph{techniques}, or \emph{styles} which
-facilitate the verification or rejection of $S$, while using any other method would
-prove to be a daunting task. In this way, there is a certain artistry in the
-technique for which someone proves $S$.
+This document will discuss a handful of different ways to prove some statement
+$S$. We will find that in the same way that there are different approaches to
+solving a problem, there are different proof \emph{techniques}, or \emph{styles}
+which facilitate the verification or rejection of $S$, while using any other
+method would prove to be a daunting task. In this way, there is a certain
+artistry in the technique for which someone proves $S$.
 
 % allows us to show some perhaps counter-intuitive relationships
 The product of a (successful) proof allows us to definitively state whether some
-statement is true or false. This allows us to assert some perhaps counter-intuitive results:
+statement is true or false. This allows us to assert some perhaps
+counter-intuitive results:
 \begin{claim}
   The number $0.999... = 0.\bar{9} = 1$.
   \begin{proof}
-    We examine properties of and manipulate the number $0.\bar{9}$ to achieve the desired
-    equality. Let $n = 0.\bar{9}$.
+    We examine properties of and manipulate the number $0.\bar{9}$ to achieve
+    the desired equality. Let $n = 0.\bar{9}$.
     \begin{align}
        n  &= 0.\bar{9} & \justify{Definition}                             \\
        10n &= 9.\bar{9}   											                          \\
@@ -69,12 +75,14 @@ statement is true or false. This allows us to assert some perhaps counter-intuit
     And thus, we see from the equivalence of the first and last equations that $0.999 = 1$, as claimed.
   \end{proof}
 \end{claim}
-We note that the step from \ref{intro: eq: nsubstract} to \ref{intro: eq: 9nwhole} \emph{require} that the decimal representation is non-terminating.
+We note that the step from \ref{intro: eq: nsubstract} to
+\ref{intro: eq: 9nwhole} \emph{require} that the decimal representation is
+non-terminating.
 
 
 Note that the term ``convincing" previously stated is extremely important here.
-Perhaps the justification for the shifts and cancellations in the 2nd to 4th lines
-are not convincing enough - we provide an alternative proof to the claim:
+Perhaps the justification for the shifts and cancellations in the 2nd to 4th
+lines are not convincing enough - we provide an alternative proof to the claim:
 \begin{proof}
   \begin{align}
     3 \cdot \frac{1}{3} &= \frac{1}{3} + \frac{1}{3} + \frac{1}{3} \\
@@ -84,6 +92,7 @@ are not convincing enough - we provide an alternative proof to the claim:
   But it is clear that $3 \cdot \frac{1}{3} = \frac{3}{3} = 1$.
 \end{proof}
 
-Conceptually speaking, proofs are divided into two groups: \emph{Direct} and \emph{Indirect}.
-We review some important concepts of mathematics before diving into these techniques.
+Conceptually speaking, proofs are divided into two groups: \emph{Direct} and
+\emph{Indirect}. We review some important concepts of mathematics before diving
+ int these techniques.
 \end{document}

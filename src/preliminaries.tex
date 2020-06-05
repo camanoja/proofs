@@ -5,9 +5,38 @@
 We review and define some necessary concepts before we begin our discussion of
 proofs.
 
+\section{Definitions}
+In order to formalize our reasoning on objects which have properties like
+numbers, vectors, shapes, etc., we need to first make \emph{mathematically
+clear} what we mean when we talk about numbers, vectors or shapes.
+
+\begin{expl}
+  Given the non-negative integers $0, 1, 2, \ldots$, we want to characterize
+  the even numbers from the odd numbers.
+
+  The even numbers are those numbers that are evenly divisible by 2:
+  $$0, 2, 4, 6 \ldots = 2 \cdot 0, 2 \cdot 1, 2 \cdot 2, 2 \cdot 3 \ldots$$.
+  We define even numbers as those numbers of the form $2 \cdot k$, where $k$
+  is some non-negative whole number.
+
+
+  The odd numbers are those numbers not evenly divisible by 2:
+  \begin{align*}
+    1, 3, 5, \ldots &= 0 + 1, 2 + 1, 4 + 1 \\
+                    &= 2 \cdot 0 + 1, 2 \cdot 1 + 1, 2 \cdot 2 + 1
+  \end{align*}
+  We define the odd numbers are defined by those numbers of the form
+  $2 \cdot k + 1$, where $k$ is some non-negative whole number.
+\end{expl}
+
+ Definitions for objects serve as our foundation as they characterize what we
+ mean by those objects.
+
+ % definitions, formalization, deductions, conclusions
+
 \section{Conventions}
   % assigning a number to a letter
-  \subsubsection*{Assigning a Number to a Letter}
+  \subsubsection{Assigning a Number to a Letter}
   The mathematical statement $n = 2.2$ \emph{assigns} the number $2.2$ to the
   letter $n$, and allows us to use the $n$ in replacement of where the number
   would exist. The $n$ is known as a variable. This assignment usually exists
@@ -22,44 +51,36 @@ proofs.
   objects other than numbers. We may say that $x = (2, 9)$, $y = 5 + 3i$,
   $z = f$ (where $f$ is a function), etc.
 
+\begin{comment}
   % theorems, lemmas and corollaries
-  \subsubsection*{Theorems vs. Lemmas vs. Corollaries}
+  \subsubsection{Theorems vs. Lemmas vs. Corollaries}
   What defines a theorem is obscure, but the general rule is as follows.
   A theorem describes some sort of large or powerful result, while a lemma
   describes a subordinate result (sometimes called a ``stepping stone") used to
   achieve a theorem. A corollary is a result that is an immediate consequence
   of a theorem.
-
-  For example, we might call to memory \emph{Pythagoras' Theorem}, which states
-  that the square of length of the hypotenuse of a right triangle is equal to
-  the sum of the squares of its adjacent sides. A lemma that could perhaps be
-  used to prove the theorem is the fact that the area of a triangle is one-half
-  the area of its enclosing quadrilateral. And finally, a corollary of the
-  theorem is that there are \emph{infinitely} many Pythagorean triplets
-  (e.g. $(3, 4, 5), (6, 8, 10), (12, 16, 20)$, etc.).
+\end{comment}
 
 \section{Properties of Equality}
   Suppose that two mathematical objects (numbers, ordered pairs, matrices, etc.)
   $a$ and $b$ are equal. We express this as $a = b$.
 
-  Then, we must have that:
+  Then, we assume that the following statements are true:
   \begin{enumerate}[label=(\alph*)]
     \item The equality is \emph{transitive}. That is, if $a = b$ and $b = c$,
-    for some object $c$ then $a = c$. For example, we know that $2 = 4/2$. We
-    also know that $2 = \sqrt[3]{8}$. Hence, $\frac{4}{2} = \sqrt[3]{8}$.
+    then $a = c$. For example, we know that $2 = 4/2$. We know also that
+    $2 = \sqrt[3]{8}$. Hence, $\frac{4}{2} = \sqrt[3]{8}$.
 
-    \item The equality is \emph{symmetric}. That is, $a = b$ and $b = a$.
-    For example, $(27, 49.02) = (3^3, 7^2 + 0.2)$ and
-    $(3^3, 7^2 + 0.2) = (27, 49.02)$.
+    \item The equality is \emph{symmetric}. That is, if $a = b$ then $b = a$.
+    For example, $0.49 = 49/100$ and $49/100 = 0.49$
 
-    \item The equality is \emph{reflexive}. That is, $a = a$. For example,
-     $5 \cdot 10 = 5 \cdot 10.$
+    \item The equality is \emph{reflexive}. That is, $a = a$ (any object is
+    equal to itself). For example, $5 \cdot 10 = 5 \cdot 10.$
   \end{enumerate}
 
 \section{Number Sets}
-  \subsubsection*{Definitions}
-  A \emph{set} is an unordered collection of numbers. We define the following
-  sets of numbers:
+  \subsubsection{Definitions}
+  A set is an unordered (and possibly infinite) collection of numbers.
   \begin{enumerate}
     \item $\naturals$: The set containing the non-negative whole numbers. In
     set notation, we say $\naturals = \toset{0, 1, 2, \ldots}$.
@@ -87,11 +108,11 @@ proofs.
   \emph{member} of $S$. In mathematical notation, $n \in S$. As an example, we
   have that $-5 \in \ints$ but $-5 \not\in \naturals$.
 
-  \subsubsection*{Closure}
-  We say that a set $S$ is \emph{closed} under a certain operation (e.g.
-  addition, multiplication, et cetera) if for \emph{any} two elements
-  $a, b \in S$, the resulting object $c$ that is the result of the operation
-  between $a$ and $b$ \emph{is also} in $S$. We have the following properties:
+  \subsubsection{Closure}
+  We say that a set $S$ is \emph{closed} under a certain operation if for
+  \emph{any} two elements $a, b \in S$, the resulting object $c$ that is the
+  result of the operation between $a$ and $b$ \emph{is also} in $S$. The
+  following properties are true:
 
   \begin{itemize}
     \item $\naturals$ is closed under addition and multiplication, but not
@@ -120,11 +141,12 @@ proofs.
 
   For example, for $a = 0; b = 4; s_i = (-1)^i/i!$ we have:
   \begin{align}
-    \sum_{i=0}^{4}{\frac{(-1)^i}{i!}} &= \negfrac{0} + \negfrac{1} + \negfrac{2}
-                                      + \negfrac{3} + \negfrac{4}  \label{prelim: eq: sumcos} \\
-                                      &= 1 - 1 + \frac{1}{2} - \frac{1}{6} + \frac{1}{24} \\
-                                      &= \frac{1}{2} - \frac{1}{6} + \frac{1}{24} \\
-                                      &= \frac{3}{8}
+    \sum_{i=0}^{4}{\frac{(-1)^i}{i!}}
+      &= \negfrac{0} + \negfrac{1} + \negfrac{2}
+      + \negfrac{3} + \negfrac{4}  \label{prelim: eq: sumcos} \\
+      &= 1 - 1 + \frac{1}{2} - \frac{1}{6} + \frac{1}{24} \\
+      &= \frac{1}{2} - \frac{1}{6} + \frac{1}{24} \\
+      &= \frac{3}{8}
   \end{align}
 
   It should be noted that there is usually no unique way to describe a sum in
@@ -146,4 +168,8 @@ proofs.
   % reflexivity
 
   % transitivity
+
+  \section{Common Definitions}
+
+
 \end{document}

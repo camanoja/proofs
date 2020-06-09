@@ -3,19 +3,24 @@
 \usepackage{macros/camanojamacros}
 \usepackage{subfiles}
 
-\newcommand{\example}[1]{\textbf{Example}: \emph{#1}}
+\let \oldprime \prime
+
+%\newcommand{\example}[1]{\textbf{Example}: \emph{#1}}
 \newcommand{\justification}[1]{\text{[\textbf{#1}]}}
 
 \newcommand{\challenge}{(\emph{Challenge}) }
-\let \oldprime \prime
+
 \renewcommand{\prime}{^{\oldprime}}
 \newcommand{\dprime}{^{\oldprime\oldprime}}
-
 \newcommand{\rationals}{\mathbb{R}}
 
-\newenvironment{expl}{
-\noindent\hrulefill \\
-    \textbf{Example:}
+\newtheorem{example}{Example}[chapter] \theoremstyle{definition}
+
+\newenvironment{expl}[1]{
+\noindent\hrulefill
+\begin{example}
+  #1
+\end{example}
 }
 {
 

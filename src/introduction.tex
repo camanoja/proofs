@@ -3,117 +3,73 @@
 \newcommand{\assump}{\textbf{[A]}}
 \newcommand{\deduct}{\textbf{[D]}}
 
+\newcommand{\ftfnset}{
+Formally, a function
+}
+
 \begin{document}
 \chapter{Introduction}
-\section{What are Proofs?}
-% Deductive arguments
-In life, we are given bits of information about the world around us.
-Statements like ``it is raining in Toronto today", ``if you are shorter than 147
-centimeters, then you cannot enter", or ``every person has two biological
-parents" is a statement that is either true, or false, exclusively. Presented
-with starting information, we are concerned with \emph{reasoning} through
-whether another statement is true or false, consistent with our start.
+\section{Goals of this Booklet}
+The main goal of this booklet is to provide a clear and concise introduction to
+logical proof structure - a way of formalizing reasoning. By the end of the
+booklet, my hope is that you have gained a few mathematical tools to use to
+prove various things. I aim to do this by providing a large breath of examples
+throughout that involve familiar math involving numbers, basic geometry, and a
+bit of calculus.
 
-\begin{expl}{}
-  Suppose the second statement in the previous paragraph is true, and
-  suppose that Ellie is 170 centimeters tall, Jack is taller than Ellie, and Sam
-  is shorter than Jack.
+I write this booklet as a first-glance introduction to formal proof structure,
+\textbf{primarily} for readers who have not had prolonged exposure to this set
+of techniques before. To be sure, I would not consider this booklet to be a
+textbook in any sense, but rather as a pocket guide for utilizing some of the
+most powerful tools in math. In this way, I aim for a balance of rigour: as
+much of it that does not distract away from the fundamental idea of the proof
+itself, which is the technique being used. For example, when we speak about
+functions, we will be thinking about them as ``mathematical machines" that
+take a number as its input and returns a unique number as its output - rather
+than the more fundamental set formulation.
 
-  We are concerned with whether it is true that (a) Ellie can enter (b) Jack
-  can enter and (c) Sam can enter.
+% structure of the booklet
+% each section starts with a few examples, ending with a capstone example
+To be sufficiently concise, this paper must assume a few things. In particular,
+this paper asks for a familiarity of high school mathematics: that in the realm
+of algebra, factoring, functions, variables, et cetera. A section that
+defines the preliminary requirements is provided in the next chapter.
 
-  \begin{itemize}
-    \item Since Ellie is taller than 147 centimeters, she can enter.
-    \item Since Jack is taller than Ellie, Jack's height is greater than
-          Ellie's height. Therefore, Jack can enter.
-    \item We cannot make any conclusion on whether Sam can enter.
-  \end{itemize}
+% on the language used
+Proofs in mathematics consist of symbolic relationships (e.g. expressions and
+equations) and natural language to describe the logic being applied. As is a
+feature of math, the way that we provide these descriptions require a certain
+structure. This fact is useful to keep in mind as we explore different examples
+in this booklet.
 
-  Now, suppose that Ellie is exactly 147 centimeters tall. Then both Ellie and
-  Jack can enter, but not Sam. If Ellie is any shorter, then Ellie and Sam may
-  not enter, and we have no conclusion on whether Jack can enter.
-\end{expl}
-To prove a statement is to \emph{formalize} our reasoning about it. We assume a
-set of statements which we deem are true (assumptions), and we form a series of
-steps that logically follow from the previous step (deductions). In the next
-example, we will prefix our assumptions by \assump{} and our deductions by
-\deduct.
+\section{Enter Reasoning}
+It is important to answer a few questions about the nature of proofs before we
+get to proving.
 
-% Example: Deductive Arguments
-\begin{expl}{}
-\assump{} In the land of Knights and Knaves, knights always tell the truth and
-knaves always tell lies. People are either knights, or they are knaves in this
-land.
+\paragraph{Who Proves?} In daily life, you and I are bombarded with questions
+about the world that need answering: ``Is it raining today?", ``Will the bus
+arrive at 10:15 this morning?", ``Do I meet the qualifications for this job?"
+et cetera. Questions like these vary in complexity and impact on our lives,
+and in most cases we want to be right in our conclusions, especially when these
+judgments affect our decisions on other questions down the line. Thus, in this
+way, those who want to understand are those who prove.
 
-You meet two people, Alice and Bob (henceforth referred to as $A$ and $B$,
-respectively.) \assump{} $A$ says ``Both of us are knaves."
+\paragraph{When to Prove?} Whenever we are curious about some phenomenon,
+it is natural to ask questions about the nature of that phenomenon. Finding
+answers to these questions shines light on our understanding of that phenomenon.
+Our answers inform how we interact with these objects, and determine other
+questions we might ask about them. Thus, we prove whenever we are curious.
 
-We wish to determine who is a knight and who is a knave.
+\paragraph{What are Proofs?} Proofs are the artistry of reason. A proof combines
+knowledge and facts to to discover new knowledge about the subject at hand.
 
-\begin{itemize}
-  \item[\deduct] Suppose that $A$ is a knight. If $A$ is a knight, then the
-        statement ``Both of us are knaves" is a lie (since $A$ is a knight and
-        therefore cannot be a knave).
-  \item[\deduct] Since knights cannot tell a lie, and $A$ told a lie, then $A$
-        must not have been a knight in the first place.
-  \item[\deduct] Therefore, $A$ cannot be a knight.
-  \item[\deduct] Since $A$ cannot be a knight, then $A$ is a knave.
-  \item[\deduct] Since knaves always tell lies, the statement ``Both of us are
-        knaves" is a false statement (a lie).
-  \item[\deduct] The only way for this statement to be false is when $B$ is a
-       knight.
-  \item[\deduct] Therefore, $B$ must be a knight. \newline \hrulesmall
-  \item[\deduct] Therefore, $A$ is a knave and $B$ is a knight.
-\end{itemize}
-\end{expl}
+\paragraph{Why Prove?} To prove is to wield the power of reason. We engage
+reason so that we can direct our decisions; we engage reason so that we can
+answer questions. We prove because we are naturally curious, and we are curious
+because we are human.
 
-Given a statement $S$, a proof for $S$ is a convincing structured argument that
-shows $S$ is true. The structure of a proof uses knowledge that we have to
-discover facts about that knowledge that we did not previously know. Naturally,
-we can use these facts to prove more results. The accumulation of these facts
-allows us to develop a body of statements as a mathematical system.
 
-\todo{System Tree Diagram}
+\paragraph{} For the rest of this document, we turn to answer the question:
+\textbf{How to Prove?}
 
-This document will discuss a handful of different ways to prove some statement
-$S$. Like tools in a toolbox, there are a variety of proof techniques wherein
-different scenarios are more effective in proving $S$ than others; indeed, there
-is a craftsmanship and beauty in the way for which someone proves $S$.
-
-% allows us to show some perhaps counter-intuitive relationships
-The product of a (successful) proof allows us to definitively state whether some
-statement is true or false. This allows us to assert some perhaps
-counter-intuitive results:
-\begin{claim}
-  The infinite decimal number $0.999...$ (which we abbreviate to
-  $0.\bar{9}$) is equal to $1$.
-  \begin{proof}
-    We examine properties of and manipulate the number $0.\bar{9}$ to achieve
-    the desired equality. Let $n = 0.\bar{9}$. We deduce:
-    \begin{align}
-       n  &= 0.\bar{9} & \justify{Definition}                             \\
-       10n &= 9.\bar{9}   											                          \\
-       10n - (n) &= 9.\bar{9} - (0.\bar{9}) & \justify{Definition of $n$} \label{intro: eq: nsubstract} \\
-       9n &= 9                                                            \label{intro: eq: 9nwhole}\\
-        n &= 1
-    \end{align}
-    And thus, we see from the equivalence of the first and last equations that
-    $0.999 = 1$, as claimed.
-  \end{proof}
-\end{claim}
-
-Note that the term ``convincing"  stated is extremely important here.
-We provide an alternative proof to the claim:
-\begin{proof}
-  \begin{align}
-    3 \cdot 1/3 &= 1/3 + 1/3 + 1/3 \\
-                &= 0.\bar{3} + 0.\bar{3} + 0.\bar{3} & \justify{Decimal representation of 1/3} \\
-                &= 0.\bar{9}
-  \end{align}
-  But $3 \cdot 1/3 = 3/3 = 1$.
-\end{proof}
-
-Proofs are segregated into two groups: \emph{Direct} and \emph{Indirect}.
-We review some fundamental concepts of mathematics before diving in these
-techniques.
 \end{document}

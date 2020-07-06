@@ -11,22 +11,25 @@
 
 \newcommand{\challenge}{(\emph{Challenge}) }
 
-\renewcommand{\prime}{^{\oldprime}}
-\newcommand{\dprime}{^{\oldprime\oldprime}}
-\newcommand{\rationals}{\mathbb{R}}
+%\renewcommand{\prime}{^{\oldprime}}
+%\newcommand{\dprime}{^{\oldprime\oldprime}}
 
 \newtheorem{example}{Example}[chapter] \theoremstyle{definition}
+\newtheorem{prop}{Property}[chapter] \theoremstyle{plain}
 
 \newenvironment{expl}[1]{
-\noindent\hrulefill
+\noindent \rule{\textwidth}{0.05cm}
 \begin{example}
   #1
 \end{example}
 }
 {
 
-\noindent\hrulefill \\
+\noindent \hrulefill \\
 }
+
+\DeclareMathOperator{\dom}{Dom}
+\DeclareMathOperator{\ran}{Ran}
 
 \author{James Camano}
 \title{A Quick Guide to Proofs}

@@ -1,17 +1,73 @@
 \documentclass[../proofs.tex]{subfiles}
 \begin{document}
 \chapter{Direct Proofs}
-  A \emph{direct proof} can be
-  thought of as using known facts to prove a statement, without resorting to an
-  alternative method. We illustrate with a few examples. \\
+ Just as the name implies, a \textbf{direct proof} is a method of proving that
+ uses known facts to directly prove a given statement. We might synonymise the
+ term ``direct proof" with the other term ``simple reasoning":
 
-\begin{expl}{The sum of two odd numbers is an even number}
+ \begin{expl}{Alice, Bill and Charlie}
+   % heights, Alice taller than bill, and Charlie is shorter than bill
+   %  then Bill cannot be taller than Alice.
+
+ \end{expl}
+
+ In general, when we formalize our simple reasoning, we must also formalize our
+ reasoning's structure. The proof structure, in order is:
+
+ \begin{enumerate}
+   \item The statement to be proved (the claim),
+   \item Relevant definitions,
+   \item Logical deductions that follow from the definitions, and
+   \item The final conclusions.
+ \end{enumerate}
+
+
+\begin{expl}{Mutually Inclusive Definitions}
+The definition of odd and even functions might lead you to believe that odd and
+even functions are mutually exclusive. We show that due to one special
+function, this is not the case.
+
+% TODO: explicit domain
+\begin{claim} The function $z(x) = 0$ is the only function that is both an even
+  function and an odd function.
+\end{claim}
+\begin{proof}
+  Let $f$ be some function that has the property that it is both even and odd.
+  Then, for all $x \in \dom(f)$, $f$ must also satisfy the following:
+  \begin{align}
+    2f(x) \label{direct: expl: ffsum1}
+      &= f(x) + f(x) \\
+      &= f(x) + f(-x) & \justify{$f$ is even} \\
+      &= f(x) + (-f(x)) & \justify{$f$ is odd} \\
+      &= f(x) - f(x) \\
+      &= 0 \label{direct: expl: ffsum2}
+  \end{align}
+  By the transitive property of equality, we have that expressions
+  (\ref{direct: expl: ffsum1}) and (\ref{direct: expl: ffsum2}) are equal. Thus
+  $2f(x) = 0$, meaning that $f(x) = 0 = z(x)$ by dividing by 2 on both sides.
+
+
+  We conclude that if $f$ is both even and odd, then it is necessarily equal
+  to $z$, the additive function identity.
+\end{proof}
+
+Note a technicality: $z$ must have the property that if $x \in \dom(z)$, then
+$-x \in \dom(z)$. For example, the function $z'(x) = 0$ defined
+on $x \in [1, 2]$ is neither even nor odd, while $z''(x) = 0$ defined on
+$x \in [-2, -1] \cup [1, 2]$ is.
+\end{expl}
+
+The example above illustrates the power of a proof: out of the infinite
+possibilities and combinations of functions, we assert that only one function
+fits the criteria.
+
+\begin{expl}{The sum of two odd numbers is even}
 \begin{proof}
 % define odd numbers
 Let $a$ and $b$ be odd numbers. We may express $a$ and $b$ as:
 \begin{align*}
   a &= 2n + 1, \quad \text{ and}   \\
-  b &= 2m + 1; \quad \text{for } n,m \in \mathbb{Z}
+  b &= 2m + 1; \quad \text{for } n,m \in \ints
 \end{align*}
 
 This comes from the definitions of odd numbers. As a verifying example,
@@ -19,12 +75,12 @@ $a = -7, b = 3$ if $n = -4$ and $m = 1$. Adding $a$ and $b$, we immediately get
 the desired result:
 \begin{align*}
   a + b &= (2n + 1) + (2m + 1) 	& \justify{by definition of $a$ and $b$} \\
-       &= (2n + 2m) + (1 + 1) 	& \justify{by the commutative property of $\mathbb{Z}$} \\
-       &= 2(n+m) + 2			& \justify{factoring} \\
-       &= 2(n+m+1)				& \justify{factoring}
+        &= (2n + 2m) + (1 + 1)  & \justify{commutativity of $\ints$} \\
+        &= 2(n+m+1)				& \justify{simplifying}
 \end{align*}
 
-Since the sum of an integer and another integer will always be an integer, we conclude that $a+b$, by definition, is an even number, as wanted.
+Since the sum of an integer and another integer will always be an integer,
+we conclude that $a+b$, by definition, is an even number, as wanted.
 
 \end{proof}
 
@@ -32,4 +88,7 @@ Since the sum of an integer and another integer will always be an integer, we co
 
 In this case, we used the known definitions of odd numbers and properties of
 simple algebra to achieve our desired result.
+
+% another power: all the infinite combinations of a specific class of objects
+%  share a certain property
 \end{document}

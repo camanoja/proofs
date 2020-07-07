@@ -1,0 +1,53 @@
+\section{Definitions}
+In order to formalize our reasoning on objects which have properties like
+numbers, vectors, or shapes, we need to first make \textbf{mathematically
+clear} what we mean when we talk about numbers, vectors or shapes.
+
+\begin{expl}{Definition of the even and odd numbers}
+  Given the non-negative integers $0, 1, 2, \ldots$, we want to characterize
+  the even numbers from the odd numbers.
+
+  The even numbers are those numbers that are evenly divisible by 2:
+  $$(0, 2, 4, 6 \ldots) = (2 \cdot 0, 2 \cdot 1, 2 \cdot 2, 2 \cdot 3 \ldots)$$.
+  We define even numbers as those numbers of the form $2 \cdot k$, where $k$
+  is some non-negative whole number.
+
+
+  The odd numbers are those numbers not evenly divisible by 2:
+  \begin{align*}
+    (1, 3, 5, \ldots) &= (0 + 1, 2 + 1, 4 + 1, \ldots) \\
+                      &= (2 \cdot 0 + 1, 2 \cdot 1 + 1, 2 \cdot 2 + 1, \ldots)
+  \end{align*}
+  We define the odd numbers are defined by those numbers of the form
+  $2 \cdot k + 1$, where $k$ is some non-negative whole number.
+\end{expl}
+
+A definition of something formalizes precisely what characterises that
+object. If we are to show that some object $O$ fits our definition, then
+we must show that $O$ has exactly those properties listed in the definition.
+
+\begin{expl}{Definition of even and odd functions}
+  As stated in the introduction, a function is a ``mathematical
+  machine" that recieves an input and returns an output that is unique for
+  that input. That is, a function $f$ satisfies the property:
+  $$\text{If } a = b, \text{ then } f(a) = f(b).$$
+  The complete set of input values that $f$ can take is called its domain and
+  we denote it by $\dom(f)$, and the complete set of $f$'s output values is
+  called its range, and we denote it by $\ran(f)$.
+
+
+  We will say that a function $f_E$ is an even function if it is a function
+  and it satisfies the following property for all input values in $\dom(f_E)$:
+  $$f_E(-x) = f_E(x)$$
+
+  We will say that a function $f_O$ is an odd function if it is a function and
+  it satisfies the following for all input values in $\dom(f_O)$:
+  $$f_O(-x) = -f_O(x)$$
+
+  Examples of even functions are $f(x) = x^2, g(x) = \ln(|x|)$ and
+  $h(x) = 1/\sqrt{1-x^2}$. Examples of odd functions are $f'(x) = \tan(x)$,
+  $g'(x) = x^3$ and $h'(x) = 0$, as is easily verifiable.
+\end{expl}
+
+
+% definitions, formalization, deductions, conclusions

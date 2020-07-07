@@ -1,0 +1,106 @@
+\documentclass[../proofs.tex]{subfiles}
+
+\newcommand{\ftjustified}{\footnote{We will not attempt to define the term
+ ``justified", except for loosely requiring that the deduction makes sense,
+taking the prior statements into consideration.}}
+
+\begin{document}
+\chapter{Bad Proofs}
+Here, we explore examples of what \textbf{not} to do, and what consistutes bad
+form. Wherever possible, we correct the mistakes made in our first try.
+
+\section{Types of Bad Form}
+As we have previously stated, proofs are the power of reasoning and so our
+proofs are only as strong as our reason. No matter what proof style we use or
+how eloquently we present our proof, if one deduction is faulty then the whole
+proof is rejected. The mathematical court holds zero reservations.
+
+The issue boils down to logical validity and circularity. An argument
+that is logically valid means that every deduction is justified by the
+definitions or deductions \emph{preceding} it.\ftjustified On the other hand,
+a circular argument is one that assumes that its conclusion is true. Though a
+circular argument is logically valid, its discoveries hold value until the
+conclusion is actually proven to be true.
+
+We will explore these cases of bad proofs:
+\begin{enumerate}
+  \item Inexhaustive Cases,
+  \item Deductive Inconsistency,
+  \item Circular Logic, and
+  \item Ill-definedness.
+\end{enumerate}
+
+\section{Inexhaustive Cases}
+Consider the following (erroneous) claim:
+\begin{claim}
+  Let $n \leq 10$, $n \in \naturals$. The number $n! = n \cdot (n-1) \cdots 2
+  \cdot 1$ is \textbf{not divisible} by 81.
+\end{claim}
+\begin{proof}
+  Since all the factors of $n!$ for $n < 10$ are factors in $10!$, it follows
+  that $10!$ is not divisible by 81, then the claim is true.
+
+  Notice that
+  $$10! = 1 \cdot 2 \cdot 3 \cdot 4 \cdot 5
+  \cdot 6 \cdot 7 \cdot 8 \cdot 9 \cdot 10.$$
+
+  None of these integer factors are a multiple of 81, as wanted.
+\end{proof}
+
+This ``proof" is invalid because it did not check all the \emph{possible}
+factors that come from combining the integer factors of $10!$. We show
+that, in fact, $9!$ is divisible by 81:
+\begin{proof}
+  \begin{align}
+    9! &= 1 \cdot 2 \cdot 3 \cdot 4 \cdot 5 \cdot 6 \cdot 7 \cdot 8 \cdot 9 \\
+       &= 3 \cdot 3 \cdot 9 \cdot (2 \cdot 4 \cdot 5 \cdot 2 \cdot 7 \cdot 8),
+        & \text{factoring}\\
+       &= 81 \cdot (2 \cdot 4 \cdot 5 \cdot 2 \cdot 7 \cdot 8)
+  \end{align}
+  So, indeed, $9! = 81k$, for some $k \in \naturals$, and thus the above
+  claim is false.
+\end{proof}
+
+\section{Inconsistency}
+Consider the following claim:
+
+\begin{claim}
+  0 = 1
+\end{claim}
+\begin{proof}
+  Let $a = 1, b = a$. Then:
+  \begin{align}
+    &a = b & \text{commutativity of $=$} \\
+    \implies &a^2 = b^2 \\
+    \implies &a^2 = ab  \\
+    \implies &a^2 - b^2 = ab - b^2 \\
+    \implies &(a + b)(a - b) = b(a - b) \\
+    \implies &a + b = b & \text{dividing by $(a-b)$} \label{eq: baddiv} \\
+    \implies &a = 0 \\
+    \implies &1 = 0 & \text{$a = 1$, by definition}
+  \end{align}
+\end{proof}
+
+Of course, the lines from equation (\ref{eq: baddiv}) downward do not hold, as
+the operation performed is a division by zero. A division by zero by any number
+never yields a finite number, so the deduction is invalid in $\reals$.
+
+\section{Circular Logic}
+We incorrectly prove the \textbf{correct} claim:
+\begin{claim}
+  Let $x, y \in \reals$ such that $0 \leq y \leq x$. Then $y^2 \leq x^2$.
+\end{claim}
+\begin{proof}
+  \begin{align}
+    &y \leq x, \text{ by assumption} \label{eq: sqassump} \\
+    \implies &y^2 \leq x^2 \text{, squaring both sides.} \label{eq: sqconseq}
+  \end{align}
+\end{proof}
+
+Perhaps because of its conciseness, this proof may seem to hold at first sight.
+However, notice that the claim is 
+
+\section{Ill-definedness}
+
+
+\end{document}

@@ -1,0 +1,58 @@
+\newcommand{\negfrac}[1]{\frac{ (-1)^{#1} }{ #1 } }
+
+\section{The Sum Operator}
+In this booklet, we will encounter additions of multiple summands such as:
+$$ S = 1 + 4 + 9 + ... + 100. $$
+Explicitly writing each summand is laborious, so we express this sum
+with the shorthand: $$ S = \sum_{i=1}^{10}{i^2}. $$
+
+The symbol $\sum$ (big sigma) is known as the \textbf{sum operator}. In
+general, the sum operator takes the form:
+
+$$ \sum_{i=a}^{b} f(i) = f(a) + f(a+1) + \ldots + f(b-1) + f(b),$$
+
+For $a, b \in \naturals$ and $a \leq b$. We call $i$ the index, which ranges
+sequentially from $a$ to $b$. We call the function $f$ the sum term, where
+the value $f(i)$ exists for all values that $i$ takes.
+
+\begin{expl}{Finite Sums}
+  \begin{enumerate}
+    \item Let $a = 1; b = 4; f(i) = (-1)^i/i$. We have:
+    \begin{align}
+      \sum_{i=0}^{4} \frac{ (-1)^i }{ i }
+        &= \negfrac{1} + \negfrac{2}
+        + \negfrac{3} + \negfrac{4}  \label{prelim: eq: sumcos} \\
+        &= - 1 + \frac{1}{2} - \frac{1}{3} + \frac{1}{4} \\
+        &= -\frac{1}{2} - \frac{1}{3} + \frac{1}{4} \\
+        &= -\frac{7}{12}
+    \end{align}
+
+    \item Let $a = -2, b = 2; f(x) = 1/x$. We have:
+    \begin{align}
+      \sum_{x=-2}^{2} \frac{1}{x}
+        &= \frac{1}{-2} + \frac{1}{-1} + \frac{1}{0} + \frac{1}{1}
+        + \frac{1}{2} \\
+        &= \frac{1}{0}, & \text{ simplifying }
+    \end{align}
+    So this sum is undefined, as $f(x)$ is undefined when $x = 0$.
+  \end{enumerate}
+\end{expl}
+
+It should be noted that there is usually no unique way to describe a sum in
+sum notation. The first sum could have been expressed as
+$\sum_{i=-2}^{6}{(i+2)^2}$, and the sum in expression
+(\ref{prelim: eq: sumcos}) could have been expressed as
+$\sum_{i=0}^{4}{ \cos(i\pi) / {i!} }.$
+
+% Properties of the sum operator.
+All the familliar properties of regular sums apply to $\sum$.
+\begin{prop} (Scalar Distributivity)
+  Let $c \in \reals$. Then $$c \sum_{i=a}^{b} f(i) =
+  \sum_{i=a}^{b} c \cdot f(i).$$
+\end{prop}
+
+\begin{prop} (Combination)
+  Let $a, b \in \ints$ such that $a \leq b$. Then:
+  $$\sum_{i=a}^{b} (f(i) + g(i))
+  = \sum_{i=a}^{b} f(i) + \sum_{i=a}^{b} g(i).$$
+\end{prop}

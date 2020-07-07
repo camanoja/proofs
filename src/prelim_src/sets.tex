@@ -1,0 +1,60 @@
+\section{Sets}
+We define a set to be an unordered (and possibly infinite) collection of
+unique objects called elements, or members. We denote a set by surrounding
+its elements by curly braces, as in the following example:
+
+\begin{expl}{Finite Sets}
+  \begin{itemize}
+    \item Let $S_1$ be the set of non-negative integers which are less than
+    10. Then $S_1 = \toset{0, 1, 2, ..., 9}$, and $S_1$ has 10 elements.
+
+    \item Let $S_2$ be the set of numbers whose square is equal to $16$.
+    Then $S_2 = \toset{-4, 4}$, and $S_2$ has 2 elements.
+
+    \item Let $S_3$ be the set of odd numbers that are evenly divisible by 2.
+    Then $S_3 = \toset{}$, as $S_3$ has 0 elements. A set with no elements is
+    called the \textbf{empty set}, and is denoted with $\emptyset$.
+  \end{itemize}
+\end{expl}
+
+A set is unordered in the sense that the order for which we list its elements
+does not affect it. So, from the above example, $S_2 = \toset{4, -4}$ as
+well. A set is a collection of unique objects in the sense that the number of
+times that an element appears in the set does not affect it. So, $S_2 =
+\toset{-4, -4, 4}$. If $a$ is a member of a set $S$, we denote this
+by $a \in S$. If $a$ is not a member of $S$, then we denote this as
+$a \not \in S$.
+
+
+We can describe a set in two ways. One way, called an extensive description,
+is to write down all of its elements as we have done in the above
+example. The other way, called an intensive description, is to write down the
+form of an arbitrary element in the set, followed by a rule that the form
+takes. Symbolically:
+$$ \toset{ \lrangle{\text{form}} : \lrangle{\text{rule}} } $$
+
+The latter description is helpful when describing infinite sets.
+
+\begin{expl}{Infinite Sets}
+  \begin{itemize}
+    \item Let $S_4$ be the set of integers. Then
+    $S_4 = \toset{..., -2, -1, 0, 1, 2, ...}$. We denote the integer set
+    as $\ints$.
+
+    \item Let $S_5$ be the set of all perfect squares. Then
+    $S_5 = \toset{0, 1, 4, ...}$ (extensive) and equivalently,
+    $S_5 = \toset{n^2 : n \in \ints }$ (intensive)
+
+    \item Let $S_6$ be the set of real numbers that are valid inputs to the
+    function $c(x) = \sqrt{1 - x^2}$. Then $S_6 = \dom(h) = \toset{x : x \in
+    \reals, x \in [-1, 1]}$ (where the comma is a shorthand for ``and").
+
+    We call $S_6$ an interval, and we denote it by $[-1, 1]$.
+
+    \item Let $S_7$ be the set of all points $(x, y)$ on the cartesian plane
+    that lie on the unit circle. Then $S_7 = \toset{ (x, y) :
+    x^2 + y^2 = 1 \text{ and } x, y \in [-1, 1]}$.
+  \end{itemize}
+\end{expl}
+
+Some important number sets are defined in section \ref{subsec: defnumbersets}.

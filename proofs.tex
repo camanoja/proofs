@@ -4,40 +4,49 @@
 \usepackage{subfiles}
 %\usepackage[left=1in, right=1in, top=1in, bottom=1in]{geometry}
 
+% for adding multiple images in the same figure
+\usepackage{subcaption}
+
 \let \oldprime \prime
 
-%\newcommand{\example}[1]{\textbf{Example}: \emph{#1}}
+% first arg: path to file
+% second arg: filename
+\newcommand{\inputtexsrc}[2]{\input{#1/#2}}
+\newcommand{\inputprelimsrc}[1]{ \inputtexsrc{./src/prelim_src}{#1} }
+\newcommand{\inputdpsrc}[1]{ \inputtexsrc{./src/direct_src}{#1} }
+
 \newcommand{\justification}[1]{\text{[\textbf{#1}]}}
 
-\newcommand{\challenge}{(\emph{Challenge}) }
-
-%\renewcommand{\prime}{^{\oldprime}}
-%\newcommand{\dprime}{^{\oldprime\oldprime}}
+\newcommand{\challenge}{(\textbf{Challenge}) }
+\renewcommand{\justify}[1]{\text{#1}}
 
 \newtheorem{example}{Example}[chapter] \theoremstyle{definition}
 \newtheorem{prop}{Property}[chapter] \theoremstyle{plain}
 
+% TODO: parbox? https://en.wikibooks.org/wiki/LaTeX/Boxes
 \newenvironment{expl}[1]{
-\noindent \rule{\textwidth}{0.05cm}
+\noindent {\rule{\textwidth}{0.05cm}
 \begin{example}
   #1
-\end{example}
+\end{example}}
 }
 {
 
-\noindent \hrulefill \\
+\noindent \rule{\textwidth}{0.01cm} \\
 }
 
 \DeclareMathOperator{\dom}{Dom}
 \DeclareMathOperator{\ran}{Ran}
 
+
 \author{James Camano}
-\title{A Quick Guide to Proofs}
+\title{A Quick Tutorial to Proof Structure}
 \begin{document}
 	\maketitle
 	\tableofcontents
 	\subfile{src/introduction}
 	\subfile{src/preliminaries}
+  \subfile{src/bad_proofs}
 	\subfile{src/direct}
 	\subfile{src/indirect}
 	\subfile{src/induction}

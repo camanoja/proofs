@@ -1,18 +1,60 @@
 \newcommand{\op}{\circ}
+\newcommand{\ftoperandfn}{Operators can be thought of as shorthand for
+functions. For example, the $-$ operator is shorthand to the function
+$n(x) = -x$, and $+$ is a shorthand for $a(x, y) = x + y$.}
+
+\newcommand{\ftoperanddist}{It is not always the case that
+$a \op_1 (b \op_2 c) = (b \op_2 c) \op_1 a$. If we need to make a distinction
+between the two forms, we will refer to the left form as left distributivity,
+and the right form as right distributivity.}
 
 \section{Operator Properties}
-Let $\op$ denote some operation on a set of one or more mathematical
-objects $S$. Let $x, y, z \in S$.
+Expressions like $-7$, $2.2 + 3$, $2.2 - 3$ can be deconstructed into two
+parts: \emph{operators} and \emph{operands}. In this context, $+$ is an
+operator that acts on the operands $2.2$ and $3$ in the set of real numbers.
+Since $+$ acts on two numbers, we call it a binary operator. The symbol $-$ is
+an operator that acts on the single integer $7$, so we see it as a unary
+operator.
 
+More generally, let $\op$ denote some operation on a set of one or more
+mathematical objects $S$. Then we say that $\op$ is defined over $S$.
+
+Let $x, y \in S$.
 % unary, binary, ternary operations
 If $\op x$ is a valid operation, then we call $\op$ a unary operator. If
 $x \op y$ is a valid operation, then we call $\op$ a binary operator.
+Unless conventionally specified by BEDMAS / PEMDAS, we will use parentheses ( )
+and square brackets $[$ {} $]$ to denote operator precedence.
 
-% associativity
+We describe a few useful properties of binary operators:
+\begin{itemize}
+  % transitivity
+  \item If for every $a, b \in S$ we have $a \op b = b \op a$, then we say
+  that $\op$ is \emph{transitive}.
+  % associativity
+  \item If for every $a, b, c \in S$ we have $(a \op b) \op c =
+  a \op (b \op c)$, then we say that $\op$ is \emph{associative}.
+  % distributivity
+  \item Let $\op_1$ and $\op_2$ be defined on the set $A$.
+  respectively. If $a \op_1 (b \op_2 c) = (a \op_1 b) \op_2 (a \op_1 c) =
+  (b \op_2 c) \op_1 a$ then we say that $\op_1$ \emph{distributes over}
+  $\op_2$.
+\end{itemize}
 
-% reflexivity
+We will assume the following of our binary operators:
+\begin{prop}
+  Common Properties of Binary Operators
+\end{prop}
+\begin{itemize}
+  \item $+$ (addition) and $\cdot$ (multiplication) is transitive and
+   associative over $\naturals, \ints, \rationals, \irrationals$ and $\reals$.
+  \item $-$ is associative over $\naturals, \ints, \rationals, \irrationals$
+   and $\reals$.
+\end{itemize}
 
-% transitivity
+We will define the division operation in the following way. Given 
+$p, q \in \reals$ where $q \neq 0$ we say that $p/q = r$ is equivalent
+to $p = rq$ for some $r \in \reals$. 
 
 
 \section{Operative Closure}

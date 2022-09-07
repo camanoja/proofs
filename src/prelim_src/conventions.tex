@@ -4,19 +4,56 @@
   The mathematical statement:
   $$x = 2.2$$
   \textbf{assigns} the number $2.2$ to the letter $x$, and allows us to use $x$
-  in place of $2.2$. If we expect the value of $x$ to take different values,
-  then we call $x$ a variable. If we expect the value of $x$ to stay the same,
+  in place of $2.2$. If we expect the value of $x$ to take on different values,
+  then we call $x$ a variable. If we require the value of $x$ to stay the same,
   then we call $x$ a constant.
 
   This notation is especially useful if we want to store the effect of an
   operation without explicitly calculating it. This allows us a simple yet
-  powerful freedom to algibraically manipulate our values:
+  powerful freedom to algebraically manipulate our values:
 
-  \begin{expl}{\todo{Variable Manipulation}}
-    Let $x = {5}/{2}$. Then $x^2$.
+  \begin{expl}{Variable Manipulation}
+    Let $a = p/q$ and $b = r/s$ where $q, r, s$ are not equal to $0$.
+    We wish to find the value of $a \div b$. Assign $D = a/b$. We have:
+    \begin{align}
+      D       &= a/b \\
+      bD      &= p/q     & \justify{multiplying both sides by $b$}\\
+      (r/s)D  &= p/q \\
+      rD      &= p/q \cdot s, &\justify{multiplying both sides by $s$} \\
+      D       &= (p/q) \cdot (s/r) & \justify{multiplying by $1/r$}
+    \end{align}
+
+    So $\displaystyle{\frac{p}{q} \div \frac{r}{s} =
+     \frac{p}{q} \cdot \frac{s}{r}}$,
+    as expected.
+    \begin{comment}
+    We wish to find the value of the infinitely nested square root
+    $\sqrt{6\sqrt{6 \sqrt{6 ...}}}$. Let $x = \sqrt{6\sqrt{6 \sqrt{6 ...}}}$.
+    Then:
+    \begin{align*}
+      x^2 &= 6 \sqrt{6 \sqrt{6 ...}} \\
+      x^2 &= 6x \\
+      x^2 - 6x &= 0 \\
+      x(x-6) &= 0
+    \end{align*}
+
+    So either $x=0$ or $x=6$. Since
+    $\sqrt{6 \sqrt{6 ...}} > \sqrt{6 \sqrt{0}} = 0$ we must have that $x = 6$.
+    \end{comment}
   \end{expl}
 
   \subsubsection{Assigning a Mathematical Object to a Letter}
   In the same way as numbers, we can also use variables to refer to
   mathematical objects other than numbers. We may say that $x = (2, 9)$,
   $y = 5 + 3i$, $z = f$ (where $f(x) = x^2$), et cetera.
+
+  \subsubsection{Quantifiers}
+  % like a game
+  % for all - meaning someone can choose any value
+  % there exists - meaning we choose that value
+  % such that : "with the property"
+
+  % on language; common phrases
+  % holds/does not hold
+  % ``we have"
+  % it follows that

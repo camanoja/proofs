@@ -1,8 +1,9 @@
 \section{Properties of Equality}
 Suppose that two mathematical objects (numbers, ordered pairs, matrices,
-...) $a$ and $b$ are equal. We express this as $a = b$.
+...) $a$ and $b$ are the same object, or equal. We express this as $a = b$.
 
-Then, we assume that the following statements are true:
+Then to express what we mean by $a$ is the same as $b$, we assume that the
+following statements are true:
 \begin{enumerate}[label=(\alph*)]
   \item If $a = b$ and $b = c$, then $a = c$. This property is called
   \textbf{transitivity}.
@@ -10,3 +11,29 @@ Then, we assume that the following statements are true:
   \item $a = a$ ($a$ is equal to itself). This property is called
   \textbf{reflexivity}.
 \end{enumerate}
+
+% TODO: equality is important because in algebra we often add and subtract
+% from both sides of an equation
+\section{Inequalities}
+In addition to equality between two numbers $a$ and $b$, we can express
+relationships between them in the form of inequality operators:
+
+\begin{itemize}
+  \item We say that $a < b$ if $b = a + c$, for some \emph{positive}
+  number $c$.
+  \item We say that $a > b$ if $b < a$.
+  \item If either of the above are satisfied, then $a \neq b$.
+\end{itemize}
+
+
+% a - a = 0
+\begin{theorem}
+  Let $a, b \in \reals$ such that $a = b$. Then $a - b = 0$
+\end{theorem}
+\begin{proof}
+  If $a - b \neq 0$, then either $a - b > 0$ or $a - b < 0$.
+
+  So, if $a - b > 0$, then $a = b + c$, for some $c \in \reals, c > 0$. That is
+  to say $a > b$, which contradicts our assumption that $a = b$. In the other
+  case, $b = a + c$, meaning that $b > a$, giving us another contradiction.
+\end{proof}

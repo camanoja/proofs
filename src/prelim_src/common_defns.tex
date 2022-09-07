@@ -1,0 +1,104 @@
+\section{Common Definitions}
+\subsection{Number Sets}{\label{subsec: defnumbersets}}
+\begin{itemize}
+  \item The set $\naturals = \toset{0, 1, 2, ...}$ is called the natural
+  number set.
+  \item The set $\ints = \toset{ ..., -2, -1, 0, 1, 2, ... }$ is called
+  the integer set.
+  \item The set of all numbers that are equal to a ratio of any two
+  integers $\rationals = \toset{p/q : p, q \in \ints, q \neq 0}$ is called
+  the rational number set.
+  \item The set of all numbers that are not equal to any ratio of two
+  integers $\irrationals = \toset{..., \phi, \sqrt{2}, e, \pi, ...}$ is
+  called the irrational number set.
+  \item The combined set of the rationals and irrationals
+  $\reals = \rationals \cup \irrationals$ is called the real number set.
+\end{itemize}
+
+\subsection{Common Properties of Number Sets}
+Let $S$ be some set of numbers, and let $+$ and $\times$ be defined on $S$.
+\begin{itemize}
+  \item If there is a member $z \in S$ such that for all elements 
+  $a \in S$, $a + z = z + a = a$, then we call $z$ an \emph{additive identity} of
+  $S$.
+  
+  \item If there is a member $k \in S$ such that for all elements $a \in S$,
+  $ka = ak = a$, then we call $k$ an \emph{multiplicative identity} of $S$.
+
+  \item If there is a member $b \in S$ such that for some element
+  $a \in S$, $b + a = a + b = 0$, then we call $b$ an \emph{additive inverse}
+  of $S$.
+
+  \item If for all elements $p \in S, p \neq z$, there is an element $q$ such
+  that $pq = qp = k$, we call $q$ a \emph{multiplicative inverse} of $p$.
+\end{itemize}
+
+These properties are part of a set known as \emph{field properties}. The sets 
+$\reals, \ints$ and $\rationals$ are examples of fields, whereas $\naturals$
+and $\irrationals$ are not. These properties will be fundamental in our
+discussion on direct proofs.
+
+\begin{expl}{$\rationals$ Exhibits the Above Properties}
+  $z = 0$ is a natural choice for the additive identity. Since $0 = 0/1$ can
+  be expressed as a ratio of two integers, it exists in $\rationals$. $k = 1 = 1/1$
+  is our choice for a multiplicative identity.
+
+  For additive inverses, let $p = a/b$ for $a, b \ints; b \neq 0$. Then choose
+  the number $b = -a/b$. We have that $p + q = (a - a)/b = 0$. Finally, for 
+  a multiplicative inverse, let $p = a/b$ such that $a, b \in \ints$;
+  $a, b \neq 0$. Let $q = b/a$. $pq = ab/ab = 1$, as wanted.
+\end{expl}
+
+\subsection{Functions}
+\begin{itemize}
+  \item For $n \in \naturals$, define the function:
+  \begin{align}
+    n! =
+    \begin{cases}
+      1, &\textif n = 0, \\
+      n \cdot (n-1) \cdots 2 \cdot 1, &\textif n > 0
+    \end{cases}
+  \end{align}
+  $n!$ is known as the factorial function, and it describes the total
+  number of ways to order $n$ unique objects.
+
+  \item For $n \in \naturals$, $c_0, ..., c_n \in \reals$, define the function:
+  \begin{align}
+    p(x) &= \sum_{i = 0}^{n} c_i x^i \\ 
+         &= c_0 + c_1 x + ... + c_n x^n .
+  \end{align}
+
+  Then, $p(x)$ is called a polynomial. If $c_n \neq 0$, (i.e, $c_n x^n$ is not equal
+  to $0$) then $p(x)$ is a polynomial of degree $n$. Polynomials describe phenomena
+  whose instantanous rate of change is of a smaller order than the
+  value of the function itself at a given point. 
+
+  \item
+  For $k, b \in \reals$ such that $b > 0$, define the function $f(x)$:
+  \begin{align}
+    f(x) = k b^x
+  \end{align}
+
+  Then $f(x)$ is known as an exponential function. The value $b$ is known as the
+  \emph{base} and $k$ is the coefficient. Exponentials describe phenomena whose
+  instantanous rate of change is of equal or larger order than the value of
+  the function itself.
+
+  A special exponential function deserves mention. Define the number
+  $e = \lim_{x \to \infty} (1 + 1/x)^x = 2.71828...$. The function 
+  $g(x) = e^x$ is known as the natural exponential function.
+
+  \item
+  Given the above definition of the class of exponential functions $f(x)$,
+  define the function:
+  \begin{align}
+    \log_{b}(x) =  f^{-1}(x)
+  \end{align}
+
+  Where, for a one-to-one function $y = h(x)$ defined on the set $B$,
+  $h^{-1}(y) = x$, or equivalently, $h^{-1}(h(x)) = x$. In another sense,
+  the graph of $h^{-1}$ is $h(x)$, but reflected along the line $y=x$.
+
+  Since $f(x)$ is one-to-one on all of its x-values, $f^{-1}$ is defined
+  on all values $f(x)$.
+\end{itemize}

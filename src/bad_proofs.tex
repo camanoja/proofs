@@ -1,13 +1,14 @@
 \documentclass[../proofs.tex]{subfiles}
 
-\newcommand{\ftjustified}{\footnote{We will not attempt to define the term
- ``justified", except for loosely requiring that the deduction makes sense,
-taking the prior statements into consideration.}}
+\newcommand{\ftjustified}{\footnote{I will not attempt to define the term
+ ``justified" except for requiring that the deduction makes sense,
+taking prior information into consideration.}}
 
 \begin{document}
 \chapter{Bad Proofs}
 Here, we explore examples of what \textbf{not} to do, and what consistutes bad
-form. Wherever possible, we correct the mistakes made in our first try.
+form and holes in our reasoning. Wherever possible, we correct the mistakes
+made in our first try.
 
 \section{Types of Bad Form}
 As we have previously stated, proofs are the power of reasoning and so our
@@ -17,20 +18,26 @@ proof is rejected. The mathematical court holds zero reservations.
 
 The issue boils down to logical validity and circularity. An argument
 that is logically valid means that every deduction is justified by the
-definitions or deductions \emph{preceding} it.\ftjustified On the other hand,
+definitions or deductions \emph{preceding} it.\ftjustified{} On the other hand,
 a circular argument is one that assumes that its conclusion is true. Though a
-circular argument is logically valid, its discoveries hold value until the
-conclusion is actually proven to be true.
+circular argument is logically valid (of course, if $A$ is true then $A$ is
+true), its discoveries hold no value until the assumed condition is
+independently proven.
 
 We will explore these cases of bad proofs:
 \begin{enumerate}
-  \item Inexhaustive Cases,
+  \item Non-exhaustive Cases,
   \item Deductive Inconsistency,
   \item Circular Logic, and
-  \item Ill-definedness.
+  \item Ill-definiteness.
 \end{enumerate}
 
-\section{Inexhaustive Cases}
+Note that an invalid argument for some claim does not necessarily permit us
+to conclude that the claim is false. To show that an argument is faulty is
+an argument - a proof - in itself. So by studying bad form we are
+participating in a logical exercise.
+
+\section{Non-exhaustive Cases}
 Consider the following (erroneous) claim:
 \begin{claim}
   Let $n \leq 10$, $n \in \naturals$. The number $n! = n \cdot (n-1) \cdots 2
@@ -47,14 +54,14 @@ Consider the following (erroneous) claim:
   None of these integer factors are a multiple of 81, as wanted.
 \end{proof}
 
-This ``proof" is invalid because it did not check all the \emph{possible}
+This ``proof" is invalid because it did not consider all the \emph{possible}
 factors that come from combining the integer factors of $10!$. We show
 that, in fact, $9!$ is divisible by 81:
 \begin{proof}
   \begin{align}
     9! &= 1 \cdot 2 \cdot 3 \cdot 4 \cdot 5 \cdot 6 \cdot 7 \cdot 8 \cdot 9 \\
        &= 3 \cdot 3 \cdot 9 \cdot (2 \cdot 4 \cdot 5 \cdot 2 \cdot 7 \cdot 8),
-        & \text{factoring}\\
+        & \justify{factoring}\\
        &= 81 \cdot (2 \cdot 4 \cdot 5 \cdot 2 \cdot 7 \cdot 8)
   \end{align}
   So, indeed, $9! = 81k$, for some $k \in \naturals$, and thus the above
@@ -62,24 +69,25 @@ that, in fact, $9!$ is divisible by 81:
 \end{proof}
 
 \section{Inconsistency}
-Consider the following claim:
-
+Consider the (incorrect) claim for numbers in $\reals$:
 \begin{claim}
-  0 = 1
+  $0 = 1$
 \end{claim}
 \begin{proof}
   Let $a = 1, b = a$. Then:
   \begin{align}
-    &a = b & \text{commutativity of $=$} \\
+    &a = b & \justify{commutativity of $=$} \\
     \implies &a^2 = b^2 \\
     \implies &a^2 = ab  \\
     \implies &a^2 - b^2 = ab - b^2 \\
     \implies &(a + b)(a - b) = b(a - b) \\
-    \implies &a + b = b & \text{dividing by $(a-b)$} \label{eq: baddiv} \\
+    \implies &a + b = b & \justify{dividing by $(a-b)$} \label{eq: baddiv} \\
     \implies &a = 0 \\
-    \implies &1 = 0 & \text{$a = 1$, by definition}
+    \implies &1 = 0 & \justify{$a = 1$, by definition}
   \end{align}
 \end{proof}
+The symbol $\implies$ loosely stands for ``implies", or ``it follows that".
+We discuss this in section \ref{sec: logical_primer}.
 
 Of course, the lines from equation (\ref{eq: baddiv}) downward do not hold, as
 the operation performed is a division by zero. A division by zero by any number
@@ -88,19 +96,121 @@ never yields a finite number, so the deduction is invalid in $\reals$.
 \section{Circular Logic}
 We incorrectly prove the \textbf{correct} claim:
 \begin{claim}
-  Let $x, y \in \reals$ such that $0 \leq y \leq x$. Then $y^2 \leq x^2$.
+  Let $x, y \in \reals$ such that $0 \leq x \leq y$. Then $x^2 \leq y^2$.
 \end{claim}
 \begin{proof}
   \begin{align}
-    &y \leq x, \text{ by assumption} \label{eq: sqassump} \\
-    \implies &y^2 \leq x^2 \text{, squaring both sides.} \label{eq: sqconseq}
+    &x \leq y & \text{by assumption} \label{eq: sqassump} \\
+    \implies &x^2 \leq y^2 & \text{squaring both sides.} \label{eq: sqconseq}
   \end{align}
 \end{proof}
 
 Perhaps because of its conciseness, this proof may seem to hold at first sight.
-However, notice that the claim is 
+But notice that the proof essentially restates the claim statement: equation
+(\ref{eq: sqassump}) restates the first sentence (the condition), and equation
+(\ref{eq: sqconseq}) restates the second sentence (the consequent). The
+transition between these two equations \emph{assumes} that the claim that we
+are trying to prove true, is true - hence circularity.
 
-\section{Ill-definedness}
+We retry the proof of the claim:
+\begin{proof}
+  \begin{align}
+    &x \leq y \\
+    \implies &x - y \leq 0 \\
+    \implies &(x - y)(x + y) \leq 0
+      & \justify{$-$ multiplied by $+$ is $-$} \\
+    \implies &x^2 - y^2 \leq 0 & \justify{distributing} \\
+    \implies &x^2 \leq y^2 & \justify{adding $y^2$ on both sides}
+  \end{align}
+\end{proof}
 
+\section{Ill-definiteness}
+Ill-definiteness refers to some definition or condition for an object that has
+no satisfying member, or whose value is undefined. To assign $x$ to be an even
+odd number or an odd even number, for example, is a ill-defined assignment as
+there is no number that is both even and odd at the same time. Another example
+is letting $b$ to be the largest number in the interval $[0, 1)$.
+
+Of course, if one is doubtful, then they must \emph{prove} that the definition
+is ill-defined.
+
+\begin{expl}{\label{badproofs: expl: openlargest}
+   There is no largest number in the interval $[0, 1)$.}
+
+  \begin{proof}
+    Let $a \in [0, 1)$. Then $0 \leq a < 1$. Consider the value
+    $A = (a + 1) / 2$. We show that $a < A < 1$, proving that for any choice of
+    $a$, we can always choose a larger number in the interval.
+    \begin{align}
+      A &= \frac{a+1}{2} \\
+        &> \frac{a + a}{2}, & \justify{since $a < 1$, so $a+a < a+1$.} \\
+        &= \frac{2a}{2} \\
+        &= a
+    \end{align}
+    So $a < A$. Similarly:
+    \begin{align}
+      A &= \frac{a + 1}{2} \\
+        &< \frac{1 + 1}{2}, & \justify{$1 > a$.} \\
+        &= \frac{2}{2} \\
+        &= 1
+    \end{align}
+    We conclude that $a < A < 1$, as wanted.
+  \end{proof}
+\end{expl}
+
+An argument that claims and uses the existence of an ill-defined object is
+a contradiction, because no such object exists.
+
+When we explore \emph{Proofs by Contradiction} in Chapter \ref{chap: indirect},
+we will actually leverage these concepts of ill-definiteness to prove our
+claims.
+The reason why this is a valid method of proof is because we \emph{want} to
+reach a contradiction and one way is showing that a definition that we use is
+ill-defined. % Infinitely many primes
+
+\section{Disproving}
+
+
+\section*{Questions}
+\begin{enumerate}
+  \item Consider the following argument for the theorem:
+  If $a, b \in \reals$ such that $a = b$, then $a + c = b + c$
+  \begin{proof} We deduce the following:
+    \begin{align*}
+      &a = b \\
+      &a-b = 0 \\
+      &(a-b) + (c-c) = 0 & \justify{since $c-c = 0$} \\
+      &(a+c) + (-b + -c) = 0 & \justify{commutativity of $\reals$} \\
+      &a + c = b + c & \justify{ adding $b + c$ on both sides} % can't add
+    \end{align*}
+  \end{proof}
+  What is wrong with this proof? % A. circular
+
+  \item In Example \ref{badproofs: expl: openlargest} we asserted that there
+  is no largest value in $[0, 1)$. One might raise an objection with the
+  counterexample that the number $0.999... = 0.\bar{9}$ is the largest number
+  in the set. Show the surprising fact that $0.\bar{9}$ is actually equal to
+  $1$. (Hint: $1/3 = 0.\bar{3}$).
+
+  \item Show that there is no smallest member of $(0, 1]$.
+  \item Suppose someone gives you the following proof that there is 
+  a integer that is both even and odd:
+  \begin{proof}
+    Let $a = 2n + 1$ and $a = 2m$ for some integers $m, n \in \ints$.
+    Then $2n + 1 = 2m$ means $n = (2m - 1)/2$. Thus, $a$ is both even and odd
+    when $(2m - 1)/2$ is an integer. As wanted.
+  \end{proof}
+  What is wrong with this proof? % A. contradiction
+
+  \item Suppose someone gives you the following proof that for any two
+  numbers $a, b \in \ints$, $(a+b)^2 = a^2 + b^2$:
+  \begin{proof}
+    We have two cases to check:
+    
+    \textbf{Case 1}: $a = b$
+
+    \textbf{Case 2}: $a \neq b$
+  \end{proof}
+\end{enumerate}
 
 \end{document}

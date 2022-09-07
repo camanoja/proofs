@@ -8,7 +8,7 @@ its elements by curly braces, as in the following example:
     \item Let $S_1$ be the set of non-negative integers which are less than
     10. Then $S_1 = \toset{0, 1, 2, ..., 9}$, and $S_1$ has 10 elements.
 
-    \item Let $S_2$ be the set of numbers whose square is equal to $16$.
+    \item Let $S_2$ be the set of integers whose square is equal to $16$.
     Then $S_2 = \toset{-4, 4}$, and $S_2$ has 2 elements.
 
     \item Let $S_3$ be the set of odd numbers that are evenly divisible by 2.
@@ -42,14 +42,15 @@ The latter description is helpful when describing infinite sets.
     as $\ints$.
 
     \item Let $S_5$ be the set of all perfect squares. Then
-    $S_5 = \toset{0, 1, 4, ...}$ (extensive) and equivalently,
-    $S_5 = \toset{n^2 : n \in \ints }$ (intensive)
+    $S_5 = \toset{0, 1, 4, ...}$ (extensive description) and equivalently,
+    $S_5 = \toset{n^2 : n \in \ints }$ (intensive description)
 
-    \item Let $S_6$ be the set of real numbers that are valid inputs to the
-    function $c(x) = \sqrt{1 - x^2}$. Then $S_6 = \dom(h) = \toset{x : x \in
-    \reals, x \in [-1, 1]}$ (where the comma is a shorthand for ``and").
+    \item Let $S_6$ be the set of values $x$ that satisfy $-2 \leq x$ and
+    $x \leq -1$. Then $S_6 = \toset{x : x \in \reals, -2 \leq x \leq 1}$,
+    where the comma in the rule is a shorthand for ``and".
 
-    We call $S_6$ an interval, and we denote it by $[-1, 1]$.
+    We call $S_6$ an interval, and we denote it by $[-2, 1]$. If instead we
+    required $-2 < x \leq 1$ then we would denote it by $(-2, 1]$.
 
     \item Let $S_7$ be the set of all points $(x, y)$ on the cartesian plane
     that lie on the unit circle. Then $S_7 = \toset{ (x, y) :
@@ -58,3 +59,6 @@ The latter description is helpful when describing infinite sets.
 \end{expl}
 
 Some important number sets are defined in section \ref{subsec: defnumbersets}.
+
+\section{Operations on Sets}
+% union, concatenation, subtraction
